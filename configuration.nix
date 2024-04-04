@@ -29,6 +29,9 @@
     "flakes"
   ];
 
+  # Disable IPv6
+  networking.enableIPv6 = false;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
