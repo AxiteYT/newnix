@@ -2,6 +2,7 @@
   imports = [
     ../../modules/servarr/default.nix
     ../../modules/qemu-guest/default.nix
+    ../../mounts/plex.nix
     ./network-config.nix
   ];
 

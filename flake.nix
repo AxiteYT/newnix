@@ -71,7 +71,7 @@
               ./hosts/besta/default.nix
             ];
           };
-          plex = nixpkgs.lib.nixosSystem
+        plex = nixpkgs.lib.nixosSystem
           {
             system = "x86_64-linux";
             modules = [
