@@ -1,9 +1,9 @@
 { modulesPath, config, lib, pkgs, ... }: {
   imports = [
-    ./radarr/default.nix
-    ./sonarr/default.nix
+    ../deluge/default.nix
     ./bazarr/default.nix
     ./prowlarr/default.nix
-    ../qbittorrent/default.nix
+    ./radarr/default.nix
+    ./sonarr/default.nix
   ];
 }

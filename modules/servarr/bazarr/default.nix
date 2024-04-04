@@ -1,1 +1,5 @@
-{ }
+{
+  services.bazarr = {
+    enable = true;
+  };
+}
