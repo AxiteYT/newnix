@@ -1,6 +1,7 @@
 { modulesPath, config, lib, pkgs, ... }: {
   imports = [
     ../../modules/servarr/default.nix
+    ./network-config.nix
   ];
 
   # Add besta user
