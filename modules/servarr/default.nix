@@ -6,4 +6,6 @@
     ./radarr/default.nix
     ./sonarr/default.nix
   ];
+
+  users.groups.servarr = { };
 }
