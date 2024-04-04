@@ -8,7 +8,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     # NixOS
-    inputs.nixos.url = "nixpkgs/nixos-unstable";
+    nixos.url = "nixpkgs/nixos-unstable";
 
     # Disko
     disko = {
@@ -40,17 +40,20 @@
 
         ISO = nixos.lib.nixosSystem {
           system = "x86_64-linux";
-          systemd.services.sshd.wantedBy = pkgs.lib.mkForce [ "multi-user.target" ];
-          users.users.root.openssh.authorizedKeys.keys = [
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMXEwWst3Kkag14hG+nCtiRX8KHcn6w/rUeZC5Ww7RU axite@axitemedia.com"
-          ];
           modules = [
+            ({ pkgs, ... }: {
+              systemd.services.sshd.wantedBy = pkgs.lib.mkForce [ "multi-user.target" ];
+              users.users.root.openssh.authorizedKeys.keys = [
+                "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMXEwWst3Kkag14hG+nCtiRX8KHcn6w/rUeZC5Ww7RU axite@axitemedia.com"
+              ];
+            })
             "${nixos}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
             ({ pkgs, ... }: {
               environment.systemPackages = [ ];
             })
           ];
         };
+
 
         ################
         # NixOS Systems#
