@@ -1,7 +1,7 @@
 {
   networking = {
     #Hostname
-    hostName = "besta";
+    hostName = "plex";
 
     # Gateway
     defaultGateway = "192.168.1.1";
