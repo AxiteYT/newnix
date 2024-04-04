@@ -6,5 +6,9 @@ My personal machine's NixOS Configuration
 
 ```bash
 sudo -i
-bash <(curl -s "https://raw.githubusercontent.com/AxiteYT/axnix/main/scripts/install.sh")
+
+# The root password will be needed for install
+passwd root
+
+nix --extra-experimental-features "nix-command flakes" run github:nix-community/nixos-anywhere -- --flake github:/axiteyt/newnix#${FLAKENAME} root@localhost
 ```
