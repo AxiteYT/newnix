@@ -7,6 +7,9 @@
     # Nixpkgs
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
+    # NixOS
+    inputs.nixos.url = "nixpkgs/nixos-unstable";
+
     # Disko
     disko = {
       url = "github:nix-community/disko";
@@ -24,7 +27,7 @@
   # Outputs #
   ###########
 
-  outputs = { self, nixpkgs, disko, ... }:
+  outputs = { self, nixos, nixpkgs, disko, ... }:
     {
       nixosConfigurations = {
         ####################
@@ -43,7 +46,9 @@
           ];
           modules = [
             "${nixos}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-            ({ pkgs, ... }: { });
+            ({ pkgs, ... }: {
+              environment.systemPackages = [ ];
+            })
           ];
         };
 
