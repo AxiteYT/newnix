@@ -1,6 +1,7 @@
 { modulesPath, config, lib, pkgs, ... }: {
   imports = [
     ../../modules/servarr/default.nix
+    ../../modules/qemu-guest/default.nix
     ./network-config.nix
   ];
 
