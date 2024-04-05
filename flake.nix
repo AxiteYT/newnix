@@ -60,7 +60,20 @@
         ################
 
         #### Notes #####
-        # Add the following to specify a disk: { disko.devices.disk.disk1.device = "/dev/sda"; }
+        # Add the following to specify a disk: { disko.devices.disk.main = "/dev/sda"; }
+
+        axnix = nixpkgs.lib.nixosSystem
+          {
+            system = "x86_64-linux";
+            modules = [
+              disko.nixosModules.disko
+              {
+                disko.devices.disk.main.device = /*TODO: Add device*/"";
+              }
+              ./configuration.nix
+              ./hosts/axnix/default.nix
+            ];
+          };
 
         besta = nixpkgs.lib.nixosSystem
           {

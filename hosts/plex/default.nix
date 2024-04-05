@@ -1,7 +1,7 @@
 { modulesPath, config, lib, pkgs, ... }: {
   imports = [
     ../../modules/plex/default.nix
-    ../../modules/qemu-guest/default.nix
+    ../../hardware/qemu-guest/default.nix
     ../../mounts/plex.nix
     ./network-config.nix
   ];
