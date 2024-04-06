@@ -1,4 +1,4 @@
-{ modulesPath, config, lib, pkgs, ... }: {
+{ modulesPath, config, lib, nixpkgs, ... }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
@@ -19,8 +19,8 @@
   services.openssh.enable = true;
 
   environment.systemPackages = map lib.lowPrio [
-    pkgs.curl
-    pkgs.gitMinimal
+    nixpkgs.curl
+    nixpkgs.gitMinimal
   ];
 
   # Enable the Nix command and flakes

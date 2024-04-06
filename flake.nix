@@ -41,14 +41,14 @@
         ISO = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ({ pkgs, ... }: {
-              systemd.services.sshd.wantedBy = pkgs.lib.mkForce [ "multi-user.target" ];
+            ({ nixpkgs, ... }: {
+              systemd.services.sshd.wantedBy = nixpkgs.lib.mkForce [ "multi-user.target" ];
               users.users.root.openssh.authorizedKeys.keys = [
                 "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMXEwWst3Kkag14hG+nCtiRX8KHcn6w/rUeZC5Ww7RU axite@axitemedia.com"
               ];
             })
             "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-            ({ pkgs, ... }: {
+            ({ nixpkgs, ... }: {
               environment.systemPackages = [ ];
             })
           ];
