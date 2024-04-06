@@ -66,9 +66,9 @@
       # OBS
       obs-studio = {
         enable = true;
-        package = pkgs.obs-studio;
+        package = nixpkgs.obs-studio;
         plugins =
-          map (plugin: pkgs.obs-studio-plugins.${plugin}) [
+          map (plugin: nixpkgs.obs-studio-plugins.${plugin}) [
             "obs-vaapi"
             "obs-vkcapture"
             "obs-gstreamer"
