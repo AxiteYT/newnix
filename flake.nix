@@ -28,6 +28,9 @@
   ###########
 
   outputs = { self, nixos, nixpkgs, disko, home-manager, ... }:
+    let
+      lib = nixpkgs.lib;
+    in
     {
       nixosConfigurations = {
         ####################
@@ -62,7 +65,7 @@
         #### Notes #####
         # Add the following to specify a disk: { disko.devices.disk.main = "/dev/sda"; }
 
-        axnix = nixpkgs.lib.nixosSystem
+        axnix = lib.nixosSystem
           {
             system = "x86_64-linux";
             modules = [
@@ -76,7 +79,7 @@
             ];
           };
 
-        besta = nixpkgs.lib.nixosSystem
+        besta = lib.nixosSystem
           {
             system = "x86_64-linux";
             modules = [
@@ -85,7 +88,7 @@
               ./hosts/besta/default.nix
             ];
           };
-        plex = nixpkgs.lib.nixosSystem
+        plex = lib.nixosSystem
           {
             system = "x86_64-linux";
             modules = [
