@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, modulesPath, ... }: {
   # Set the system to use the XanMod kernel
   boot = {
     kernelPackages = pkgs.linuxPackagesFor pkgs.linux_xanmod;
@@ -14,12 +14,9 @@
       ];
       kernelModules = [ ];
     };
-    kernelModules = [
-      "kvm-intel"
-      "wl"
-    ];
-    extraModulePackages = [
-      config.boot.kernelPackages.broadcom_sta
-    ];
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ ];
   };
+
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
