@@ -3,7 +3,6 @@
     ./kernel.nix
     ./network-config.nix
     ./sound.nix
-    ../../home/axnix.nix
     ../../modules/steam/default.nix
     ../../modules/kde/default.nix
     ../../hardware/amd/default.nix
