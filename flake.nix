@@ -7,9 +7,6 @@
     # Nixpkgs
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    # NixOS
-    nixos.url = "nixpkgs/nixos-unstable";
-
     # Disko
     disko = {
       url = "github:nix-community/disko";
@@ -27,7 +24,7 @@
   # Outputs #
   ###########
 
-  outputs = { self, nixos, nixpkgs, disko, home-manager, ... }:
+  outputs = { self, nixpkgs, disko, home-manager, ... }:
     let
       lib = nixpkgs.lib;
     in
@@ -41,7 +38,7 @@
         nix build .#nixosConfigurations.ISO.config.system.build.isoImage
         */
 
-        ISO = nixos.lib.nixosSystem {
+        ISO = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ({ pkgs, ... }: {
@@ -50,7 +47,7 @@
                 "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMXEwWst3Kkag14hG+nCtiRX8KHcn6w/rUeZC5Ww7RU axite@axitemedia.com"
               ];
             })
-            "${nixos}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
             ({ pkgs, ... }: {
               environment.systemPackages = [ ];
             })
