@@ -18,7 +18,7 @@ in
     };
 
     # Packages
-    packages = with nixpkgs;
+    packages = with pkgs;
       [
         brave
         #davinci-resolve # Big download :(
@@ -64,9 +64,9 @@ in
     # OBS
     obs-studio = {
       enable = true;
-      package = nixpkgs.obs-studio;
+      package = pkgs.obs-studio;
       plugins =
-        map (plugin: nixpkgs.obs-studio-plugins.${plugin}) [
+        map (plugin: pkgs.obs-studio-plugins.${plugin}) [
           "obs-vaapi"
           "obs-vkcapture"
           "obs-gstreamer"
