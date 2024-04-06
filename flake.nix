@@ -68,7 +68,7 @@
             modules = [
               disko.nixosModules.disko
               {
-                disko.devices.disk.main.device = /*TODO: Add device*/"";
+                disko.devices.disk.main.device = "nvme0n1";
               }
               ./configuration.nix
               ./hosts/axnix/default.nix

@@ -1,9 +1,9 @@
-{ pkgs, config, lib ? pkgs.lib, ... }: {
+{ nixpkgs, config, lib ? nixpkgs.lib, ... }: {
 
   # Home Manager
 
   # axite user
-  home-manager.users.axite = { config, pkgs, ... }: {
+  home-manager.users.axite = { config, nixpkgs, ... }: {
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -20,7 +20,7 @@
       };
 
       # Packages
-      packages = with pkgs;
+      packages = with nixpkgs;
         [
           brave
           #davinci-resolve # Big download :(
