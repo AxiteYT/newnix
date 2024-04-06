@@ -69,7 +69,7 @@
               home-manager.nixosModules.home-manager
               disko.nixosModules.disko
               {
-                disko.devices.disk.main.device = "nvme0n1";
+                disko.devices.disk.main.device = "/dev/nvme0n1";
               }
               ./configuration.nix
               ./hosts/axnix/default.nix
