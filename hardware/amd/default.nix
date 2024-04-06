@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   # Set GPU in kenel
   boot.initrd.kernelModules = [ "amdgpu" ];
 
