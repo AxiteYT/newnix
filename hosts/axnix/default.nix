@@ -1,4 +1,4 @@
-{ modulesPath, config, lib, pkgs, ... }: {
+{ modulesPath, config, lib, nixpkgs, ... }: {
   imports = [
     ./kernel.nix
     ./network-config.nix
@@ -22,7 +22,7 @@
   };
 
   # System Packages
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with nixpkgs; [
     btop
     cargo
     cifs-utils
@@ -33,7 +33,7 @@
     lutris
     neofetch
     neovim
-    nixpkgs-fmt
+    nixnixpkgs-fmt
     ntfs3g
     ollama
     patchelf

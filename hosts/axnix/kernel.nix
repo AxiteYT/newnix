@@ -1,7 +1,7 @@
-{ config, lib, pkgs, modulesPath, ... }: {
+{ config, lib, nixpkgs, modulesPath, ... }: {
   # Set the system to use the XanMod kernel
   boot = {
-    kernelPackages = pkgs.linuxPackagesFor pkgs.linux_xanmod;
+    kernelPackages = nixpkgs.linuxPackagesFor nixpkgs.linux_xanmod;
 
     initrd = {
       availableKernelModules = [
