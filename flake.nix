@@ -67,11 +67,24 @@
             system = "x86_64-linux";
             specialArgs = { inherit inputs self; };
             modules = [
+              # home-manager
               home-manager.nixosModules.home-manager
+              {
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  users.axite = import ./home/axnix.nix;
+                  extraSpecialArgs = { inherit inputs self; };
+                };
+              }
+              
+              # disko
               disko.nixosModules.disko
               {
                 disko.devices.disk.main.device = "/dev/nvme0n1";
               }
+
+              # Configuration
               ./configuration.nix
               ./hosts/axnix/default.nix
             ];
