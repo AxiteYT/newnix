@@ -105,6 +105,7 @@
                 ./hosts/besta/default.nix
               ];
             };
+
           plex = lib.nixosSystem
             {
               system = "x86_64-linux";
@@ -112,6 +113,16 @@
                 disko.nixosModules.disko
                 ./configuration.nix
                 ./hosts/plex/default.nix
+              ];
+            };
+
+          munshi = lib.nixosSystem
+            {
+              system = "x86_64-linux";
+              modules = [
+                disko.nixosModules.disko
+                ./configuration.nix
+                ./hosts/munshi/default.nix
               ];
             };
         };
