@@ -3,6 +3,6 @@
   networking = {
     hostName = "axnix";
     networkmanager.enable = true;
-    useDHCP = lib.mkForce true;
+    useDHCP = lib.mkDefault true;
   };
 }
