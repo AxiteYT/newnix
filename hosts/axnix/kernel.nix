@@ -14,7 +14,10 @@
       ];
       kernelModules = [ ];
     };
-    kernelModules = [ "kvm-intel" "wl" ];
+    kernelModules = [
+      "kvm-intel"
+      "wl"
+    ];
     extraModulePackages = [
       config.boot.kernelPackages.broadcom_sta
     ];
