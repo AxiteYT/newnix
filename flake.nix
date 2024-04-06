@@ -24,7 +24,7 @@
   # Outputs #
   ###########
 
-  outputs = { self, nixpkgs, disko, home-manager, ... }:
+  outputs = inputs @ { self, nixpkgs, disko, home-manager, ... }:
     let
       lib = nixpkgs.lib;
     in
@@ -65,6 +65,7 @@
         axnix = lib.nixosSystem
           {
             system = "x86_64-linux";
+            specialArgs = { inherit inputs self; };
             modules = [
               home-manager.nixosModules.home-manager
               disko.nixosModules.disko

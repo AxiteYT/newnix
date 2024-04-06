@@ -1,4 +1,3 @@
-{ self, nixpkgs, ... }:
 {
   services = {
     # Configure keymap in X11
@@ -33,7 +32,7 @@
 
   # Fonts
   fonts = {
-    packages = with nixpkgs; [
+    packages = with pkgs; [
       font-awesome
       hunspellDicts.en_AU
       hunspellDicts.en_US

@@ -1,4 +1,4 @@
-{ self, nixpkgs, ... }: {
+{
   # Set GPU in kenel
   boot.initrd.kernelModules = [ "amdgpu" ];
 
@@ -12,16 +12,16 @@
     driSupport32Bit = true;
 
     # Vulkan + OpenCL packages
-    extraPackages = with nixpkgs; [
+    extraPackages = with pkgs; [
       rocmPackages.clr.icd
       amdvlk
     ];
-    extraPackages32 = with nixpkgs; [
+    extraPackages32 = with pkgs; [
       driversi686Linux.amdvlk
     ];
   };
 
   # HIP Libraries override
   systemd.tmpfiles.rules =
-    [ "L+    /opt/rocm/hip   -    -    -     -    ${nixpkgs.rocmPackages.clr}" ];
+    [ "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}" ];
 }

@@ -1,4 +1,4 @@
-{ modulesPath, config, lib, nixpkgs, ... }: {
+{
   imports = [
     ../../modules/servarr/default.nix
     ../../hardware/qemu-guest/default.nix

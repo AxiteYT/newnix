@@ -1,4 +1,4 @@
-{ modulesPath, config, lib, nixpkgs, ... }: {
+{ modulesPath, config, lib, pkgs, ... }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
@@ -19,8 +19,8 @@
   services.openssh.enable = true;
 
   environment.systemPackages = map lib.lowPrio [
-    nixpkgs.curl
-    nixpkgs.gitMinimal
+    pkgs.curl
+    pkgs.gitMinimal
   ];
 
   # Enable the Nix command and flakes
@@ -33,7 +33,7 @@
   networking.enableIPv6 = false;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  pkgs.config.allowUnfree = true;
 
   system.stateVersion = "24.05";
 }

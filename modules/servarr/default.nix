@@ -1,4 +1,4 @@
-{ modulesPath, config, lib, nixpkgs, ... }: {
+{
   imports = [
     ../deluge/default.nix
     ./bazarr/default.nix

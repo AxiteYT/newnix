@@ -1,4 +1,4 @@
-{ self, nixpkgs, ... }: {
+{
   programs.steam = {
     enable = true;
 
@@ -12,7 +12,7 @@
     };
 
     # Packages
-    extraCompatPackages = with nixpkgs;[
+    extraCompatPackages = with pkgs;[
       proton-ge-bin
     ];
   };
