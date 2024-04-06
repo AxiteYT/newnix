@@ -27,7 +27,7 @@
   # Outputs #
   ###########
 
-  outputs = { self, nixos, nixpkgs, disko, ... }:
+  outputs = { self, nixos, nixpkgs, disko, home-manager, ... }:
     {
       nixosConfigurations = {
         ####################
@@ -66,6 +66,7 @@
           {
             system = "x86_64-linux";
             modules = [
+              home-manager.nixosModules.home-manager
               disko.nixosModules.disko
               {
                 disko.devices.disk.main.device = "nvme0n1";
