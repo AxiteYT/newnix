@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   imports = [
     ./kernel.nix
     ./network-config.nix
@@ -22,7 +22,7 @@
   };
 
   # System Packages
-  environment.systemPackages = with nixpkgs; [
+  environment.systemPackages = with pkgs; [
     btop
     cargo
     cifs-utils
