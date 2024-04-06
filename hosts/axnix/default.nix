@@ -22,7 +22,7 @@
   };
 
   # System Packages
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with nixpkgs; [
     btop
     cargo
     cifs-utils
