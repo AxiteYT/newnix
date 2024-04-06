@@ -1,4 +1,4 @@
-{ nixpkgs, config, lib ? nixpkgs.lib, ... }: {
+{ self, nixpkgs, ... }: {
 
   # Home Manager
 
