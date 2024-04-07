@@ -12,6 +12,8 @@
     efiInstallAsRemovable = true;
   };
 
+
+
   # Enable SSH
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMXEwWst3Kkag14hG+nCtiRX8KHcn6w/rUeZC5Ww7RU axite@axitemedia.com"
@@ -28,6 +30,10 @@
     "nix-command"
     "flakes"
   ];
+
+  # Set TimeZOne
+
+  time.timeZone = "Australia/Sydney";
 
   # Disable IPv6
   networking.enableIPv6 = false;
