@@ -37,7 +37,7 @@ in
         patchelf
         protonup-qt
         runelite
-        RuneScape
+        runescape
         putty
         spotify
         unityhub
