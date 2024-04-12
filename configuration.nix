@@ -12,8 +12,6 @@
     efiInstallAsRemovable = true;
   };
 
-
-
   # Enable SSH
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMXEwWst3Kkag14hG+nCtiRX8KHcn6w/rUeZC5Ww7RU axite@axitemedia.com"
@@ -39,7 +37,12 @@
   networking.enableIPv6 = false;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
 
   system.stateVersion = "24.05";
 }
