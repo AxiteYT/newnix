@@ -5,8 +5,10 @@ in
 {
   # Allow unfree packages
   nixpkgs = {
-    config.allowUnfree = true;
-    allowUnfreePredicate = (_: true);
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
   };
 
   # Home config
