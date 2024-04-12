@@ -4,7 +4,10 @@ let
 in
 {
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    allowUnfreePredicate = (_: true);
+  };
 
   # Home config
   home = {
