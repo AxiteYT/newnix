@@ -36,6 +36,8 @@ in
         nixfmt
         patchelf
         protonup-qt
+        runelite
+        RuneScape
         putty
         spotify
         unityhub
