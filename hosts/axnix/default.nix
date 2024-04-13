@@ -5,6 +5,7 @@
     ./sound.nix
     ../../modules/steam/default.nix
     ../../modules/kde/default.nix
+    ../../modules/flatpak/default.nix
     ../../hardware/amd/default.nix
     ../../mounts/apollo.nix
   ];
