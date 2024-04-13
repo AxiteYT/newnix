@@ -9,19 +9,19 @@
         layout = "au";
         variant = "";
       };
-
-      # Enable the KDE Plasma Desktop environment
-      displayManager = {
-        sddm = {
-          enable = true;
-          wayland.enable = false;
-        };
-        defaultSession = "plasma";
-      };
     };
 
     # Enable KDE Plasma
     desktopManager.plasma6.enable = true;
+
+    # Enable the KDE Plasma Desktop environment
+    displayManager = {
+      sddm = {
+        enable = true;
+        wayland.enable = false;
+      };
+      defaultSession = "plasma";
+    };
   };
 
   # Theming
