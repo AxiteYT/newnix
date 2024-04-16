@@ -29,6 +29,7 @@ in
     packages = with pkgs;
       [
         brave
+        bitwarden
         davinci-resolve
         discord
         dolphinEmu
