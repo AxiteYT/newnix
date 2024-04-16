@@ -9,7 +9,7 @@ in
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
       permittedInsecurePackages = [
-                "openssl-1.1.1w"
+        "openssl-1.1.1w"
       ];
     };
   };
