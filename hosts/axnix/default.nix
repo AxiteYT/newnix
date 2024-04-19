@@ -29,6 +29,7 @@
     ffmpeg-full
     gamemode
     gawk
+    input-remapper
     killall
     lutris
     neofetch
