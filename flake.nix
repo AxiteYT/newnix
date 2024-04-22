@@ -92,6 +92,7 @@
 
                 # Configuration
                 ./configuration.nix
+                ./hosts/default.nix
                 ./hosts/axnix/default.nix
               ];
             };
@@ -102,6 +103,7 @@
               modules = [
                 disko.nixosModules.disko
                 ./configuration.nix
+                ./hosts/default.nix
                 ./hosts/besta/default.nix
               ];
             };
@@ -112,6 +114,7 @@
               modules = [
                 disko.nixosModules.disko
                 ./configuration.nix
+                ./hosts/default.nix
                 ./hosts/plex/default.nix
               ];
             };
@@ -122,6 +125,7 @@
               modules = [
                 disko.nixosModules.disko
                 ./configuration.nix
+                ./hosts/default.nix
                 ./hosts/munshi/default.nix
               ];
             };
