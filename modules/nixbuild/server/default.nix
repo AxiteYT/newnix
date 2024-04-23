@@ -26,6 +26,7 @@
     buildMachines = [{
       hostName = "localhost";
       system = "x86_64-linux";
+      protocol = "ssh-ng";
       maxJobs = 20;
       speedFactor = 10;
     }];
