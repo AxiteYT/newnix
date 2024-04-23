@@ -8,7 +8,7 @@
       hostName = "192.168.1.7";
       sshUser = "builduser";
       system = "x86_64-linux";
-      maxJobs = 1;
+      maxJobs = 20;
       speedFactor = 5;
       supportedFeatures = [ "big-parallel" "benchmark" ];
     }];

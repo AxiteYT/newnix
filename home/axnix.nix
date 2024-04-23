@@ -35,6 +35,8 @@ in
         dolphinEmu
         gh
         gimp
+        git
+        github-desktop
         hunspell
         k4dirstat
         lutris

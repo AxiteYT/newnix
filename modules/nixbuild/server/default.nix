@@ -26,7 +26,7 @@
     buildMachines = [{
       hostName = "localhost";
       system = "x86_64-linux";
-      maxJobs = 1;
+      maxJobs = 20;
       speedFactor = 10;
     }];
   };
