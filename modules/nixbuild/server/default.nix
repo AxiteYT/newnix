@@ -23,10 +23,10 @@
   # Configure Nix Daemon to allow remote builds
   nix = {
     distributedBuilds = true;
-    buildMachine = [{
+    buildMachines = [{
       hostName = "localhost";
       system = "x86_64-linux";
-      maxJobs = pkgs.lib.auto;
+      maxJobs = 1;
       speedFactor = 10;
     }];
   };
