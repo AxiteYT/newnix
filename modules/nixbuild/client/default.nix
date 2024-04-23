@@ -6,6 +6,7 @@
     distributedBuilds = true;
     buildMachines = [{
       hostName = "192.168.1.7";
+      sshUser = "builduser";
       system = "x86_64-linux";
       maxJobs = 1;
       speedFactor = 5;
@@ -15,12 +16,11 @@
 
   # SSH client configuration for root, assuming root is used for builds
   programs.ssh = {
-    enable = true;
     extraConfig = ''
-      Host munshi
+      Host 192.168.1.7
       Hostname 192.168.1.7
       User builduser
-      IdentityFile /root/.ssh/id_rsa_builduser
+      IdentityFile /root/.ssh/nix_builder_key
       IdentitiesOnly yes
       StrictHostKeyChecking accept-new
     '';
