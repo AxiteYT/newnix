@@ -5,7 +5,7 @@
   nix = {
     distributedBuilds = true;
     buildMachines = [{
-      hostName = "munshi"; # Ensure this name resolves to your server
+      hostName = "192.168.1.7";
       system = "x86_64-linux";
       maxJobs = 1;
       speedFactor = 5;
@@ -18,7 +18,7 @@
     enable = true;
     extraConfig = ''
       Host munshi
-      Hostname munshi.axitemedia.com
+      Hostname 192.168.1.7
       User builduser
       IdentityFile /root/.ssh/id_rsa_builduser
       IdentitiesOnly yes

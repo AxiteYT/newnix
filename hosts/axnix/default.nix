@@ -6,6 +6,7 @@
     ../../modules/steam/default.nix
     ../../modules/kde/default.nix
     ../../modules/flatpak/default.nix
+    ../../modules/nixbuild/client/default.nix
     ../../hardware/amd/default.nix
     ../../mounts/apollo.nix
   ];
