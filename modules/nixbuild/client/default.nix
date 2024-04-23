@@ -13,6 +13,12 @@
       speedFactor = 5;
       supportedFeatures = [ "big-parallel" "benchmark" ];
     }];
+    settings = {
+      trusted-users = [
+        "root"
+        "builduser"
+        "@wheel"
+      ];
   };
 
   # SSH client configuration for root, assuming root is used for builds

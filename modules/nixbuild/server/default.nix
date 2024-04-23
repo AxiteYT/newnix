@@ -30,5 +30,12 @@
       maxJobs = 20;
       speedFactor = 10;
     }];
+    settings = {
+      trusted-users = [
+        "root"
+        "builduser"
+        "@wheel"
+      ];
+    };
   };
 }
