@@ -39,6 +39,7 @@ in
         github-desktop
         hunspell
         k4dirstat
+        kdenlive
         lutris
         minecraft
         neofetch
