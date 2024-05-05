@@ -61,6 +61,11 @@
     };
   };
 
+  # KDE Packages
+  environment.systemPackages = [
+    pkgs.kdePackages.knotifications
+  ];
+
   # Enable dconf
   programs.dconf.enable = true;
 
