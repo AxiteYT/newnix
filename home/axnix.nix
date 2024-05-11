@@ -41,11 +41,11 @@ in
         k4dirstat
         kdenlive
         lutris
-        minecraft
         neofetch
         nixfmt
         patchelf
         protonup-qt
+        prismlauncher #(Minecraft)
         runelite
         runescape
         putty
