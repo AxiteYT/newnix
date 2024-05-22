@@ -46,6 +46,7 @@
     unzip
     vim
     vlc
+    vmware-workstation
     wayland-utils
     wget
     wineWowPackages.waylandFull
