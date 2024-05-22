@@ -33,6 +33,7 @@ in
         davinci-resolve
         discord
         dolphinEmu
+        filezilla
         gh
         gimp
         git
