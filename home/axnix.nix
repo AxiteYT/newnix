@@ -52,6 +52,7 @@ in
         putty
         spotify
         unityhub
+        virt-viewer
         vlc
         vscodium
         wgnord
