@@ -47,6 +47,7 @@ in
         patchelf
         protonup-qt
         prismlauncher #(Minecraft)
+        remmina
         runelite
         runescape
         putty
