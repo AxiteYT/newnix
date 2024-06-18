@@ -28,6 +28,7 @@ in
     # Packages
     packages = with pkgs;
       [
+        blender
         brave
         bitwarden
         davinci-resolve
