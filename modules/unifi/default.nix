@@ -1,7 +1,7 @@
 {
   services.unifi = {
     enable = true;
-    unifiPackage = "unifi8";
+    unifiPackage = pkgs.unifi8;
     openFirewall = true;
   };
 }
