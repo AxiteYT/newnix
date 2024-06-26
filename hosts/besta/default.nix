@@ -1,5 +1,6 @@
 {
   imports = [
+    ../default.nix
     ../../modules/servarr/default.nix
     ../../hardware/qemu-guest/default.nix
     ../../mounts/plex.nix

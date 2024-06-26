@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ../default.nix
     ./kernel.nix
     ./network-config.nix
     ./sound.nix
