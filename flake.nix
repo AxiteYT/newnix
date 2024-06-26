@@ -40,25 +40,31 @@
 
       nixosConfigurations =
         {
-          ####################
-          # Installation ISO #
-          ####################
+          #######################
+          # Installation ISO(s) #
+          #######################
           /*
-        Build with the following command:
-        nix build .#nixosConfigurations.ISO.config.system.build.isoImage
+            Build with the following command:
+            nix build .#nixosConfigurations.ISO.config.system.build.isoImage
           */
 
-          ISO = lib.nixosSystem {
+          ISO = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             modules = [
-              ({ nixpkgs, ... }: {
+              # CA Certificates
+              ./modules/networking/certificates/default.nix
+
+              # Installation CD
+              "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+              ({ pkgs, ... }: {
                 systemd.services.sshd.wantedBy = nixpkgs.lib.mkForce [ "multi-user.target" ];
+
+                # Add SSH keys
                 users.users.root.openssh.authorizedKeys.keys = [
                   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMXEwWst3Kkag14hG+nCtiRX8KHcn6w/rUeZC5Ww7RU axite@axitemedia.com"
+                  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII6p03Ji2xOOKp032K2HUnhaqrlDI+fW+ncFqCLsyLOW IT.Manager@aciar.gov.au"
+                  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDjF3z+7X4vuucilcqihYSmOTiv4e913Kt8ie7VnCY8T9Z0FGHaOioFEl/xklvBpXkwHNPjI+Ts7VK34yWVXb3DZn/CaCht1miAelPihavwq9WUM7xuNecieRQVL7NCD/VfVzr3j2JLY7PzOMrPn0n7f2S5jyOqRFMe5t65KmPU/MXVl7gIChgaqgO/AzzFGBSU/kI7gnjet7zdtus0hndVbPh66l6twV6MCmspmlv2zJVgqxpFekTpsCuZDDa1ihSxFxEzvFcR4HWxjwrlum6RUbjV95LpNhygMkgVkM+8m7Ew1phX00I1YS2/xPoJtMCvrdP+Qk0wOXwdWfu9IJddNh5EkgaBsSHIMU/9oNUiIPSeJD8nB1m07YVFbwvYarMwAdzBTbKm9Op7JLl4KQ9dEvlwQren5q7UUFICML+rK4pZZ6NkIg33Cc5KN1FeT5M2yDJpOexEGI5YXudreUIQXPimTQHxuXROeDTKA3/ShZzVtDhNgILzZq5at52D18KwgfCWqpJrYUKxzHw/EveG39ci52WhL8OsGy64ZcnFYhU165tmy+ViTLHkcKEGbjLPCfxrM1dD2N57R8i7f/pHnaQEmf7ifCqZNfSe7FRSKdB+aYzpRYGrzUlLpsO06co6Fj5NEG8xxWwdCoSv7cMa7BCpUO78rHaCroiqH2iXgQ== aciarcodefetcher@aciar.gov.au"
                 ];
-              })
-              "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-              ({ nixpkgs, ... }: {
                 environment.systemPackages = [ ];
               })
             ];
