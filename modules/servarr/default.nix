@@ -1,6 +1,6 @@
 {
   imports = [
-    ../deluge/default.nix
+    ../qbittorrent/default.nix
     ./bazarr/default.nix
     ./prowlarr/default.nix
     ./radarr/default.nix
