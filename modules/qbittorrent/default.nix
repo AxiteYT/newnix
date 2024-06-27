@@ -12,6 +12,7 @@
     isSystemUser = true;
     home = "/var/lib/qbittorrent";
     description = "qbittorrent";
+    group = "servarr";
     uid = 888;
     extraGroups = [ "servarr" ];
   };
