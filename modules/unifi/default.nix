@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   services.unifi = {
+    enable = true;
     openFirewall = false;
 
     #Packages
