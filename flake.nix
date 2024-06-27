@@ -33,6 +33,7 @@
   outputs =
     inputs @ { self
     , nixpkgs
+    , nixflk
     , disko
     , home-manager
     , ...
