@@ -2,7 +2,7 @@
   imports = [
     ../default.nix
     ../../hardware/qemu-guest/default.nix
-    ../../modules/nixbuild/server/default.nix
+    #../../modules/nixbuild/server/default.nix
     ./network-config.nix
   ];
 
