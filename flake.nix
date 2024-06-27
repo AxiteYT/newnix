@@ -7,6 +7,12 @@
     # Nixpkgs
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
+    # NixFlk
+    inputs.nixflk = {
+      url = "github:nrdxp/nixflk";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Disko
     disko = {
       url = "github:nix-community/disko";
