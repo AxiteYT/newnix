@@ -8,7 +8,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     # NixFlk
-    inputs.nixflk = {
+    nixflk = {
       url = "github:nrdxp/nixflk";
       inputs.nixpkgs.follows = "nixpkgs";
     };
