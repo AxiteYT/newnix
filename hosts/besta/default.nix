@@ -21,6 +21,6 @@
 
   environment.systemPackages = with pkgs; [
     wgnord
-    wireguard
+    wireguard-tools
   ];
 }
