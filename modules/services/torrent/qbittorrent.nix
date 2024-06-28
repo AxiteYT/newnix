@@ -104,6 +104,7 @@ in
         group = cfg.group;
         home = cfg.dataDir;
         createHome = true;
+        isSystemUser = true;
         description = "qBittorrent Daemon user";
       };
     };
