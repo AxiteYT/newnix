@@ -7,12 +7,6 @@
     # Nixpkgs
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    # NixFlk
-    nixflk = {
-      url = "github:nrdxp/nixflk";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Disko
     disko = {
       url = "github:nix-community/disko";
@@ -33,7 +27,6 @@
   outputs =
     inputs @ { self
     , nixpkgs
-    , nixflk
     , disko
     , home-manager
     , ...
@@ -108,7 +101,6 @@
           besta = lib.nixosSystem
             {
               system = "x86_64-linux";
-              specialArgs = { inherit nixflk; };
               modules = [
                 disko.nixosModules.disko
                 ./configuration.nix
