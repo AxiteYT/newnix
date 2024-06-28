@@ -6,7 +6,7 @@
     ../../hardware/qemu-guest/default.nix
     ../../mounts/plex.nix
     ./network-config.nix
-    ./vpn.nix
+    #./vpn.nix
   ];
 
   # Add besta user
