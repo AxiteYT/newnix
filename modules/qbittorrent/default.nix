@@ -1,10 +1,7 @@
 { pkgs, nixflk, ... }:
-let
-  qbittorrentModule = nixflk + "/modules/services/torrent/qbittorrent.nix";
-in
 {
   imports = [
-    qbittorrentModule
+    "${nixflk}/modules/services/torrent/qbittorrent.nix"
   ];
 
   services.qbittorrent = {

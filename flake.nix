@@ -108,6 +108,7 @@
           besta = lib.nixosSystem
             {
               system = "x86_64-linux";
+              specialArgs = { inherit nixflk; };
               modules = [
                 disko.nixosModules.disko
                 ./configuration.nix
