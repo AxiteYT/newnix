@@ -98,6 +98,9 @@
                   disko.devices.disk.main.device = "/dev/nvme0n1";
                 }
 
+                # SOPS
+                sops-nix.nixosModules.sops
+
                 # Configuration
                 ./configuration.nix
                 ./hosts/axnix/default.nix
