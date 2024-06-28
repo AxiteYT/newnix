@@ -22,7 +22,7 @@ in
 
     # Editor
     sessionVariables = {
-      EDITOR = "codium";
+      EDITOR = "nano";
     };
 
     # Packages
