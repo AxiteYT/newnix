@@ -112,7 +112,6 @@
               system = "x86_64-linux";
               modules = [
                 disko.nixosModules.disko
-                sops-nix.nixosModules.sops
                 ./configuration.nix
                 ./hosts/besta/default.nix
               ];
