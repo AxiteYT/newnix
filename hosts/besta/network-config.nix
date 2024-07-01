@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   networking = {
     #Hostname
     hostName = "besta";
