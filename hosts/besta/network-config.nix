@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{
   networking = {
-    #Hostname
+    # Hostname
     hostName = "besta";
 
     # Interface
