@@ -27,7 +27,7 @@ in
     wg-quick.interfaces = {
       wg0 = {
         address = [ "10.2.0.2/32" ];
-        dns = [ ${wggateway} ];
+        dns = [ "${wggateway}" ];
         privateKeyFile = "/root/.wg/besta-AU-1.key";
         peers = [{
           publicKey = "8kyi2e0ziUqhs+ooJYYI0yaVhv/bneUC1fhV5X2q/SE=";
