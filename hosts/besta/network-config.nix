@@ -1,4 +1,11 @@
 { pkgs, ... }: {
+
+  # WG Application
+  environment.systemPackages = with pkgs; [
+    wireguard-tools
+  ];
+
+  # Networking Configuration
   networking = {
     #Hostname
     hostName = "besta";
