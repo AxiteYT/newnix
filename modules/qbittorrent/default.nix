@@ -4,12 +4,16 @@
     ../services/torrent/qbittorrent.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    certbot-full
+  ];
+
   services.qbittorrent = {
     enable = true;
     openFirewall = true;
     dataDir = "/var/lib/qbittorrent";
     user = "qbittorrent";
     group = "servarr";
-    port = 8080;
+    port = 443;
   };
 }
