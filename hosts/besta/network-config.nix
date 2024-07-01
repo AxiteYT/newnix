@@ -27,7 +27,7 @@
         peers = [{
           publicKey = "8kyi2e0ziUqhs+ooJYYI0yaVhv/bneUC1fhV5X2q/SE=";
           endpoint = "138.199.33.236:51820";
-          allowedIPs = [ "0.0.0.0/0" "192.168.1.0/24" ];
+          allowedIPs = [ "0.0.0.0/0" ];
         }];
       };
     };
