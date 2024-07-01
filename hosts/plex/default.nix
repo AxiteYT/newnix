@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   imports = [
     ../default.nix
     ../../modules/plex/default.nix
@@ -6,6 +6,21 @@
     ../../mounts/plex.nix
     ./network-config.nix
   ];
+
+  # Enable Hardware decoding
+  nixpkgs.config.packageOverrides = pkgs: {
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+  };
+
+  hardware.opengl = {
+    # hardware.graphics on unstable
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-vaapi-driver
+    ];
+  };
+
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "i965"; };
 
   # Add plex user
   users.users.plexuser = {
