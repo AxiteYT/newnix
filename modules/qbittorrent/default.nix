@@ -14,6 +14,6 @@
     dataDir = "/var/lib/qbittorrent";
     user = "qbittorrent";
     group = "servarr";
-    port = 8080;
+    port = 8443;
   };
 }
