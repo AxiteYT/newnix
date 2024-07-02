@@ -23,11 +23,11 @@
     wg-quick.interfaces = {
       wg0 = {
         address = [ "10.2.0.2/32" ];
-        #dns = [ "10.2.0.1" ];
+        dns = [ "10.2.0.1" ];
         privateKeyFile = "/root/.wg/besta-AU-1.key";
         peers = [{
-          publicKey = "8kyi2e0ziUqhs+ooJYYI0yaVhv/bneUC1fhV5X2q/SE=";
-          endpoint = "138.199.33.236:51820";
+          publicKey = "hPKSC01LiQsP+1pzPm98CFZXqkESBuwqdmMe+4ujeEs=";
+          endpoint = "103.216.220.98:51820";
           allowedIPs = [
             "0.0.0.0/5"
             "8.0.0.0/7"
