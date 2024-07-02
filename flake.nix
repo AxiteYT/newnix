@@ -156,6 +156,16 @@
                 ./hosts/elan/default.nix
               ];
             };
+
+          xyz = lib.nixosSystem
+            {
+              system = "x86_64-linux";
+              modules = [
+                disko.nixosModules.disko
+                ./configuration.nix
+                ./hosts/xyz/default.nix
+              ];
+            };
         };
     };
 }
