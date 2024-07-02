@@ -1,8 +1,4 @@
-{ pkgs, ... }:
-let
-  wggateway = "10.2.0.1";
-in
-{
+{ pkgs, ... }: {
 
   # WG Application
   environment.systemPackages = with pkgs;
@@ -27,10 +23,7 @@ in
     wg-quick.interfaces = {
       wg0 = {
         address = [ "10.2.0.2/32" ];
-        dns = [
-          "10.1.20.1"
-          "10.2.0.1"
-        ];
+        dns = [ "10.2.0.1" ];
         privateKeyFile = "/root/.wg/besta-AU-1.key";
         peers = [{
           publicKey = "8kyi2e0ziUqhs+ooJYYI0yaVhv/bneUC1fhV5X2q/SE=";
