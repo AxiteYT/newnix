@@ -1,6 +1,6 @@
-# axnix
+# newnix
 
-My personal machine's NixOS Configuration
+My personal machines' NixOS Configurations
 
 ## Installing
 
