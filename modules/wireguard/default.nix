@@ -6,7 +6,7 @@
     ];
 
   # WireGuard VPN Configuration
-  wg-quick.interfaces = {
+  networking.wg-quick.interfaces = {
     wg0 = {
       address = [ "10.2.0.2/32" ];
       dns = [ "10.2.0.1" ];
