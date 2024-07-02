@@ -39,6 +39,7 @@ in
 
         # postUP
         postUp = ''
+          iptables -I OUTPUT ! -o wg0 -m mark ! --mark $(wg show wg0 fwmark) -m addrtype ! --dst-type LOCAL ! -d ${localsubnet} -j REJECT
           ip rule add from ${localsubnet} lookup main prio 10
           ip rule add not from ${localsubnet} lookup 1234 prio 20
           ip route add default via ${localgateway} dev enp6s18 table main
@@ -47,6 +48,7 @@ in
 
         # postDown
         postDown = ''
+          iptables -D OUTPUT ! -o wg0 -m mark ! --mark $(wg show wg0 fwmark) -m addrtype ! --dst-type LOCAL ! -d ${localsubnet} -j REJECT
           ip rule del from ${localsubnet} lookup main prio 10
           ip rule del not from ${localsubnet} lookup 1234 prio 20
         '';
