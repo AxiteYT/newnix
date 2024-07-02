@@ -3,6 +3,7 @@
   imports = [
     ../default.nix
     ../../modules/servarr/default.nix
+    ../../modules/wireguard/default.nix
     ../../hardware/qemu-guest/default.nix
     ../../mounts/plex.nix
     ./network-config.nix
