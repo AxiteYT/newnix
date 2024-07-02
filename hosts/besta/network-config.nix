@@ -1,10 +1,9 @@
 { pkgs, ... }:
 let
   wggateway = "10.2.0.1";
-  localgateway = "192.168.1.1";
-  localsubnet = "192.168.1.0/24";
 in
 {
+
   # WG Application
   environment.systemPackages = with pkgs;
     [
@@ -13,7 +12,7 @@ in
 
   # Networking Configuration
   networking = {
-    # Hostname
+    #Hostname
     hostName = "besta";
 
     # Interface
@@ -35,15 +34,16 @@ in
           endpoint = "138.199.33.236:51820";
           allowedIPs = [ "0.0.0.0/0" ];
         }];
-
+        # PostUp
         postUp = ''
-          iptables -I OUTPUT ! -o wg0 -m mark ! --mark $(wg show wg0 fwmark) -m addrtype ! --dst-type LOCAL ! -d ${localsubnet} -j REJECT;
-          ip6tables -I OUTPUT ! -o wg0 -m mark ! --mark $(wg show wg0 fwmark) -m addrtype ! --dst-type LOCAL -j REJECT;
+          ip rule add from 192.168.1.0/24 table main prio 10
+          ip rule add not from 192.168.1.0/24 table 1234 prio 20
+          ip route add default via ${wggateway} dev wg0 table 1234
         '';
-
+        # PostDown
         postDown = ''
-          iptables -D OUTPUT ! -o wg0 -m mark ! --mark $(wg show wg0 fwmark) -m addrtype ! --dst-type LOCAL ! -d ${localsubnet} -j REJECT;
-          ip6tables -D OUTPUT ! -o wg0 -m mark ! --mark $(wg show wg0 fwmark) -m addrtype ! --dst-type LOCAL -j REJECT;
+          ip rule delete from 192.168.1.0/24 table main prio 10
+          ip rule delete not from 192.168.1.0/24 table 1234 prio 20
         '';
       };
     };
