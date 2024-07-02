@@ -1,4 +1,4 @@
-# newnix
+# Newnix
 
 My personal machines' NixOS Configurations
 
