@@ -58,6 +58,7 @@ in
         vlc
         vscodium
         wgnord
+        zed
       ];
   };
 
