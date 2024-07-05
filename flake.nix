@@ -12,6 +12,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Hardware
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     # Disko
     disko = {
       url = "github:nix-community/disko";
@@ -32,6 +35,7 @@
   outputs =
     inputs @ { self
     , nixpkgs
+    , nixos-hardware
     , sops-nix
     , disko
     , home-manager
@@ -104,6 +108,16 @@
                 # Configuration
                 ./configuration.nix
                 ./hosts/axnix/default.nix
+              ];
+            };
+
+          axtopair = lib.nixosSystem
+            {
+              system = "x86_64-linux";
+              modules = [
+                disko.nixosModules.disko
+                ./configuration.nix
+                ./hosts/axtopair/default.nix
               ];
             };
 

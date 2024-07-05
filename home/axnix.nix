@@ -58,7 +58,7 @@ in
         vlc
         vscodium
         wgnord
-        zed
+        zed-editor
       ];
   };
 
