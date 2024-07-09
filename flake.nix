@@ -12,6 +12,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # NUR
+    nur.url = github:nix-community/NUR;
+
     # Hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
@@ -36,6 +39,7 @@
     inputs @ { self
     , nixpkgs
     , nixos-hardware
+    , nur
     , sops-nix
     , disko
     , home-manager

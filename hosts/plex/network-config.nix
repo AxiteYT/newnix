@@ -2,7 +2,7 @@
   networking = {
     #Hostname
     hostName = "plex";
-    
+
     # Interface
     interfaces = {
       enp6s18.ipv4.addresses = [{
