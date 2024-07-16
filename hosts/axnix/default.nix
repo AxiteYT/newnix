@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ../default.nix
     ./kernel.nix
@@ -17,7 +18,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      /*"flatpak"*/
+      # "flatpak"
     ];
   };
 

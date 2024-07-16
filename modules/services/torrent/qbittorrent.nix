@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 with lib;
 let
   cfg = config.services.qbittorrent;
@@ -68,9 +73,7 @@ in
     environment.systemPackages = [ pkgs.qbittorrent ];
 
     nixpkgs.overlays = [
-      (final: prev: {
-        qbittorrent = prev.qbittorrent.override { guiSupport = false; };
-      })
+      (final: prev: { qbittorrent = prev.qbittorrent.override { guiSupport = false; }; })
     ];
 
     networking.firewall = mkIf cfg.openFirewall {
@@ -86,8 +89,8 @@ in
       serviceConfig = {
         ExecStart = ''
           ${pkgs.qbittorrent}/bin/qbittorrent-nox \
-            --profile=${configDir} \
-            --webui-port=${toString cfg.port}
+          --profile=${configDir} \
+          --webui-port=${toString cfg.port}
         '';
         # To prevent "Quit & shutdown daemon" from working; we want systemd to
         # manage it!
@@ -109,7 +112,10 @@ in
       };
     };
 
-    users.groups =
-      mkIf (cfg.group == "qbittorrent") { qbittorrent = { gid = null; }; };
+    users.groups = mkIf (cfg.group == "qbittorrent") {
+      qbittorrent = {
+        gid = null;
+      };
+    };
   };
 }

@@ -1,4 +1,11 @@
-{ config, lib, pkgs, modulesPath, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}:
+{
   # Set the system to use the XanMod kernel
   boot = {
     kernelPackages = pkgs.linuxPackagesFor pkgs.linux_xanmod;

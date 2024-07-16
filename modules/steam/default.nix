@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.steam = {
     enable = true;
 
@@ -12,8 +13,6 @@
     };
 
     # Packages
-    extraCompatPackages = with pkgs;[
-      proton-ge-bin
-    ];
+    extraCompatPackages = with pkgs; [ proton-ge-bin ];
   };
 }

@@ -8,9 +8,7 @@ in
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
-      permittedInsecurePackages = [
-        "openssl-1.1.1w"
-      ];
+      permittedInsecurePackages = [ "openssl-1.1.1w" ];
     };
   };
 
@@ -26,40 +24,39 @@ in
     };
 
     # Packages
-    packages = with pkgs;
-      [
-        blender
-        brave
-        bitwarden
-        davinci-resolve
-        discord
-        dolphinEmu
-        filezilla
-        gh
-        gimp
-        git
-        github-desktop
-        hunspell
-        k4dirstat
-        kdenlive
-        lutris
-        neofetch
-        nixfmt
-        patchelf
-        protonup-qt
-        prismlauncher #(Minecraft)
-        remmina
-        runelite
-        runescape
-        putty
-        spotify
-        unityhub
-        virt-viewer
-        vlc
-        vscodium
-        wgnord
-        zed-editor
-      ];
+    packages = with pkgs; [
+      blender
+      brave
+      bitwarden
+      davinci-resolve
+      discord
+      dolphinEmu
+      filezilla
+      gh
+      gimp
+      git
+      github-desktop
+      hunspell
+      k4dirstat
+      kdenlive
+      lutris
+      neofetch
+      nixfmt
+      patchelf
+      protonup-qt
+      prismlauncher # (Minecraft)
+      remmina
+      runelite
+      runescape
+      putty
+      spotify
+      unityhub
+      virt-viewer
+      vlc
+      vscodium
+      wgnord
+      zed-editor
+    ];
   };
 
   # Programs
@@ -84,14 +81,12 @@ in
     obs-studio = {
       enable = true;
       package = pkgs.obs-studio;
-      plugins =
-        map (plugin: pkgs.obs-studio-plugins.${plugin}) [
-          "obs-vaapi"
-          "obs-vkcapture"
-          "obs-gstreamer"
-          "wlrobs"
-        ];
+      plugins = map (plugin: pkgs.obs-studio-plugins.${plugin}) [
+        "obs-vaapi"
+        "obs-vkcapture"
+        "obs-gstreamer"
+        "wlrobs"
+      ];
     };
   };
 }
-

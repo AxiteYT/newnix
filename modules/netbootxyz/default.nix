@@ -1,7 +1,6 @@
-{ pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    netbootxyz-efi
-  ];
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [ netbootxyz-efi ];
 
   # Netboot XYZ Configuration
   boot.loader.systemd-boot.netbootxyz = {

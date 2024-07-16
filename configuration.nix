@@ -1,4 +1,11 @@
-{ modulesPath, config, lib, pkgs, ... }: {
+{
+  modulesPath,
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
@@ -41,9 +48,7 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
-      permittedInsecurePackages = [
-        "openssl-1.1.1w"
-      ];
+      permittedInsecurePackages = [ "openssl-1.1.1w" ];
     };
   };
 

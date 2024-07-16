@@ -1,9 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # WG Application
-  environment.systemPackages = with pkgs;
-    [
-      wireguard-tools
-    ];
+  environment.systemPackages = with pkgs; [ wireguard-tools ];
 
   # WireGuard VPN Configuration
   networking.wg-quick.interfaces = {
@@ -11,11 +9,13 @@
       address = [ "10.2.0.2/32" ];
       dns = [ "10.2.0.1" ];
       privateKeyFile = "/root/.wg/besta-AU-1.key";
-      peers = [{
-        publicKey = "hPKSC01LiQsP+1pzPm98CFZXqkESBuwqdmMe+4ujeEs=";
-        endpoint = "103.216.220.98:51820";
-        allowedIPs = [ "0.0.0.0/0" ];
-      }];
+      peers = [
+        {
+          publicKey = "hPKSC01LiQsP+1pzPm98CFZXqkESBuwqdmMe+4ujeEs=";
+          endpoint = "103.216.220.98:51820";
+          allowedIPs = [ "0.0.0.0/0" ];
+        }
+      ];
 
       # postRules to allow localtraffic
       postUp = ''

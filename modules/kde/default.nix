@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   services = {
     # Configure keymap in X11
     xserver = {
@@ -62,9 +63,7 @@
   };
 
   # KDE Packages
-  environment.systemPackages = [
-    pkgs.kdePackages.knotifications
-  ];
+  environment.systemPackages = [ pkgs.kdePackages.knotifications ];
 
   # Enable dconf
   programs.dconf.enable = true;

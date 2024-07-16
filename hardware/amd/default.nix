@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # Set GPU in kenel
   boot.initrd.kernelModules = [ "amdgpu" ];
 
@@ -6,6 +7,5 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   # HIP Libraries override
-  systemd.tmpfiles.rules =
-    [ "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}" ];
+  systemd.tmpfiles.rules = [ "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}" ];
 }

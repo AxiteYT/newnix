@@ -1,12 +1,8 @@
 { pkgs, ... }:
 {
-  imports = [
-    ../services/torrent/qbittorrent.nix
-  ];
+  imports = [ ../services/torrent/qbittorrent.nix ];
 
-  environment.systemPackages = with pkgs; [
-    certbot-full
-  ];
+  environment.systemPackages = with pkgs; [ certbot-full ];
 
   services.qbittorrent = {
     enable = true;

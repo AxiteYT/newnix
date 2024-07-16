@@ -5,11 +5,7 @@
     isNormalUser = false;
     createHome = false;
     extraGroups = [ "nixbld" ];
-    openssh.authorizedKeys.keys = [
-      "TODO: Add public key here"
-    ];
+    openssh.authorizedKeys.keys = [ "TODO: Add public key here" ];
   };
-
-  
 
 }
