@@ -3,7 +3,6 @@
     ../default.nix
     ./kernel.nix
     ./network-config.nix
-    ./sound.nix
     ../../modules/steam/default.nix
     ../../modules/kde/default.nix
     ../../modules/flatpak/default.nix
