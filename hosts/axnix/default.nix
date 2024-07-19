@@ -57,6 +57,9 @@
     yad
   ];
 
+  # Enable sound
+  hardware.pulseaudio.enable = true;
+
   # Nix settings
   nix = {
     gc = {
