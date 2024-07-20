@@ -181,6 +181,15 @@
             ./hosts/xyz/default.nix
           ];
         };
+
+        nuehast = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            disko.nixosModules.disko
+            ./configuration.nix
+            ./hosts/nuehast/default.nix
+          ];
+        };
       };
     };
 }
