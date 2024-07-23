@@ -36,6 +36,7 @@ in
       gimp
       git
       github-desktop
+      gparted
       hunspell
       k4dirstat
       kdenlive
