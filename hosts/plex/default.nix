@@ -25,7 +25,10 @@
   };
 
   # Add handbrake
-  environment.systemPackages = with pkgs; [ handbrake ];
+  /*
+    Currently broken:
+    environment.systemPackages = with pkgs; [ handbrake ];
+  */
 
   # Add plex user
   users.users.plexuser = {
