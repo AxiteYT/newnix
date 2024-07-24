@@ -23,6 +23,9 @@
     LIBVA_DRIVER_NAME = "i965";
   };
 
+  # Add handbrake
+  environment.systemPackages = with pkgs; [ handbrake ];
+
   # Add plex user
   users.users.plexuser = {
     isNormalUser = true;
