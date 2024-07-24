@@ -1,11 +1,11 @@
 { pkgs, ... }:
 {
   imports = [
-    ../default.nix
+    ../../hardware/qemu-guest/default.nix
     ../../modules/servarr/default.nix
     ../../modules/wireguard/default.nix
-    ../../hardware/qemu-guest/default.nix
     ../../mounts/plex.nix
+    ../default.nix
     ./network-config.nix
   ];
 
@@ -15,9 +15,9 @@
     home = "/home/besta";
     description = "Besta User";
     extraGroups = [
-      "wheel"
       "networkmanager"
       "servarr"
+      "wheel"
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMXEwWst3Kkag14hG+nCtiRX8KHcn6w/rUeZC5Ww7RU axite@axitemedia.com"

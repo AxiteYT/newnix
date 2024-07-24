@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
   imports = [
-    ../default.nix
-    ../../modules/plex/default.nix
     ../../hardware/qemu-guest/default.nix
+    ../../modules/plex/default.nix
     ../../mounts/plex.nix
+    ../default.nix
     ./network-config.nix
   ];
 
@@ -29,9 +29,9 @@
     home = "/home/plex";
     description = "Plex User";
     extraGroups = [
-      "wheel"
       "networkmanager"
       "plex"
+      "wheel"
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMXEwWst3Kkag14hG+nCtiRX8KHcn6w/rUeZC5Ww7RU axite@axitemedia.com"

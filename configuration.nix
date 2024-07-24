@@ -40,8 +40,8 @@
 
   # Enable the Nix command and flakes
   nix.settings.experimental-features = [
-    "nix-command"
     "flakes"
+    "nix-command"
   ];
 
   # Set TimeZone

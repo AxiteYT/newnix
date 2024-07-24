@@ -12,6 +12,7 @@
       enabledPreviewProviders = [
         "OC\\Preview\\BMP"
         "OC\\Preview\\GIF"
+        "OC\\Preview\\HEIC"
         "OC\\Preview\\JPEG"
         "OC\\Preview\\Krita"
         "OC\\Preview\\MarkDown"
@@ -20,7 +21,6 @@
         "OC\\Preview\\PNG"
         "OC\\Preview\\TXT"
         "OC\\Preview\\XBitmap"
-        "OC\\Preview\\HEIC"
       ];
     };
   };

@@ -12,12 +12,12 @@
 
     initrd = {
       availableKernelModules = [
-        "xhci_pci"
         "ahci"
         "nvme"
-        "usbhid"
-        "uas"
         "sd_mod"
+        "uas"
+        "usbhid"
+        "xhci_pci"
       ];
       kernelModules = [ ];
     };

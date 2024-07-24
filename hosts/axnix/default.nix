@@ -1,14 +1,14 @@
 { pkgs, ... }:
 {
   imports = [
+    ../../hardware/amd/default.nix
+    ../../modules/flatpak/default.nix
+    ../../modules/kde/default.nix
+    ../../modules/steam/default.nix
+    ../../mounts/apollo.nix
     ../default.nix
     ./kernel.nix
     ./network-config.nix
-    ../../modules/steam/default.nix
-    ../../modules/kde/default.nix
-    ../../modules/flatpak/default.nix
-    ../../hardware/amd/default.nix
-    ../../mounts/apollo.nix
   ];
 
   # Add axite user

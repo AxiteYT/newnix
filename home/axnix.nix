@@ -82,9 +82,9 @@ in
       enable = true;
       package = pkgs.obs-studio;
       plugins = map (plugin: pkgs.obs-studio-plugins.${plugin}) [
+        "obs-gstreamer"
         "obs-vaapi"
         "obs-vkcapture"
-        "obs-gstreamer"
         "wlrobs"
       ];
     };
