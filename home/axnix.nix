@@ -25,9 +25,9 @@ in
 
     # Packages
     packages = with pkgs; [
+      bitwarden
       blender
       brave
-      bitwarden
       davinci-resolve
       discord
       dolphinEmu
@@ -41,15 +41,14 @@ in
       k4dirstat
       kdenlive
       lutris
-      neofetch
       nixfmt
       patchelf
-      protonup-qt
       prismlauncher # (Minecraft)
+      protonup-qt
+      putty
       remmina
       runelite
       runescape
-      putty
       spotify
       unityhub
       virt-viewer

@@ -25,9 +25,17 @@
   ];
   services.openssh.enable = true;
 
-  environment.systemPackages = map lib.lowPrio [
-    pkgs.curl
-    pkgs.gitMinimal
+  environment.systemPackages = with pkgs; [
+    btop
+    curl
+    gawk
+    gitMinimal
+    htop
+    killall
+    neofetch
+    tree
+    unzip
+    wget
   ];
 
   # Enable the Nix command and flakes
@@ -36,8 +44,7 @@
     "flakes"
   ];
 
-  # Set TimeZOne
-
+  # Set TimeZone
   time.timeZone = "Australia/Sydney";
 
   # Disable IPv6

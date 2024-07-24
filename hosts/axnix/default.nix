@@ -24,16 +24,13 @@
 
   # System Packages
   environment.systemPackages = with pkgs; [
-    btop
     cargo
     cifs-utils
     ffmpeg-full
     gamemode
-    gawk
     input-remapper
     killall
     lutris
-    neofetch
     neovim
     nixpkgs-fmt
     ntfs3g
@@ -42,14 +39,11 @@
     powershell
     protontricks
     steamcmd
-    tree
-    unzip
     vim
     vlc
     wayland-utils
-    wget
-    wineWowPackages.waylandFull
     winetricks
+    wineWowPackages.waylandFull
     xdotool
     xorg.xprop
     xorg.xrandr
