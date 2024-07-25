@@ -5,7 +5,7 @@
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud29;
-    home = "/media/nextcloud";
+    home = "/media/Nextcloud";
     https = false;
     database.createLocally = true;
     configureRedis = true;
