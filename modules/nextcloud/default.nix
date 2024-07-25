@@ -1,41 +1,26 @@
 { pkgs, ... }:
 {
-  environment.etc."nextcloud-admin-pass".text = "Trophy-Zealous-Skier4";
+  # Nextcloud
+  networking.firewall.allowedTCPPorts = [
+    80
+    443
+  ];
 
-  services.nextcloud = {
-    enable = true;
-    package = pkgs.nextcloud29;
-    home = "/media/Nextcloud";
-    https = false;
-    database.createLocally = true;
-    configureRedis = true;
-    hostName = "nuehast";
-    maxUploadSize = "50G";
-
-    phpOptions = {
-      "opcache.interned_strings_buffer" = "10";
+  services = {
+    nextcloud = {
+      enable = true;
+      config.dbtype = "mysql";
+      autoUpdateApps.enable = true;
+      database.createLocally = true;
+      configureRedis = true;
+      hostName = "nuehast.axitemedia.com";
+      https = true;
+      dataDir = "/media/Nextcloud";
     };
 
-    config = {
-      adminpassFile = "/etc/nextcloud-admin-pass";
-      dbtype = "mysql";
-      adminuser = "nuehast";
-    };
-
-    settings = {
-      enabledPreviewProviders = [
-        "OC\\Preview\\BMP"
-        "OC\\Preview\\GIF"
-        "OC\\Preview\\HEIC"
-        "OC\\Preview\\JPEG"
-        "OC\\Preview\\Krita"
-        "OC\\Preview\\MarkDown"
-        "OC\\Preview\\MP3"
-        "OC\\Preview\\OpenDocument"
-        "OC\\Preview\\PNG"
-        "OC\\Preview\\TXT"
-        "OC\\Preview\\XBitmap"
-      ];
+    nginx.virtualHosts."nuehast.axitemedia.com" = {
+      forceSSL = true;
+      enableACME = true;
     };
   };
 }
