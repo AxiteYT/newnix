@@ -11,6 +11,7 @@
   services = {
     nextcloud = {
       enable = true;
+      package = pkgs.nextcloud29;
       autoUpdateApps.enable = true;
       database.createLocally = true;
       configureRedis = true;
