@@ -15,7 +15,7 @@
       configureRedis = true;
       hostName = "nuehast.axitemedia.com";
       https = true;
-      dataDir = "/media/Nextcloud";
+      home = "/media/Nextcloud";
     };
 
     nginx.virtualHosts."nuehast.axitemedia.com" = {
