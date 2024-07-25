@@ -3,6 +3,7 @@
   imports = [
     ../../hardware/qemu-guest/default.nix
     ../../modules/nextcloud/default.nix
+    ../../mounts/nextcloud.nix
     ../default.nix
     ./network-config.nix
   ];

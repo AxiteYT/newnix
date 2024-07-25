@@ -1,13 +1,27 @@
 { pkgs, ... }:
 {
   environment.etc."nextcloud-admin-pass".text = "Trophy-Zealous-Skier4";
+  
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud29;
+    https = false;
+    database.createLocally = true;
     configureRedis = true;
-    config.adminpassFile = "/etc/nextcloud-admin-pass";
     hostName = "nuehast";
     maxUploadSize = "50G";
+    enableBrokenCiphersForSSE = false;
+
+    phpOptions = {
+      "opcache.interned_strings_buffer" = "10";
+    };
+
+    config = {
+      adminpassFile = "/etc/nextcloud-admin-pass";
+      dbtype = "mysql";
+      adminuser = "nuehast";
+    };
+
     settings = {
       enabledPreviewProviders = [
         "OC\\Preview\\BMP"
