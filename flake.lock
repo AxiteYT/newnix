@@ -40,6 +40,22 @@
         "type": "github"
       }
     },
+    "nextcloudPreconfigured": {
+      "locked": {
+        "lastModified": 1702765112,
+        "narHash": "sha256-Av1DzNdfOMCBCUQzWJMKSdjOUTUy2vFNLZX5EN9w5ws=",
+        "ref": "main",
+        "rev": "38020bed02ada78445b9d2479aa4db736dd85fea",
+        "revCount": 3,
+        "type": "git",
+        "url": "https://codeberg.org/Triton171/nixos-nextcloud-preconfigured"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "https://codeberg.org/Triton171/nixos-nextcloud-preconfigured"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1721839713,
@@ -89,11 +105,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1721872318,
-        "narHash": "sha256-PDVseU6z/V6/cBJukJXq60GjmJiS3FaEq4P4EfjDRwU=",
+        "lastModified": 1721874591,
+        "narHash": "sha256-P3QF9ZRRArBmE1LO+XWA3g2uA7E/g6RZTgoTHTH+9Uo=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "0371422b217c5bacdfb33d637d9209d68169ee1d",
+        "rev": "b5cdfd09dfc31e4d9f7f0bfd4e41b66e0170b497",
         "type": "github"
       },
       "original": {
@@ -106,6 +122,7 @@
       "inputs": {
         "disko": "disko",
         "home-manager": "home-manager",
+        "nextcloudPreconfigured": "nextcloudPreconfigured",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nur": "nur",

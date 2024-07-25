@@ -29,6 +29,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Nextcloud
+    nextcloudPreconfigured.url = "git+https://codeberg.org/Triton171/nixos-nextcloud-preconfigured?ref=main";
   };
 
   ###########
@@ -37,13 +40,14 @@
 
   outputs =
     inputs@{
-      self,
-      nixpkgs,
-      nixos-hardware,
-      nur,
-      sops-nix,
       disko,
       home-manager,
+      nextcloudPreconfigured,
+      nixos-hardware,
+      nixpkgs,
+      nur,
+      self,
+      sops-nix,
       ...
     }:
     let
