@@ -11,7 +11,6 @@
     configureRedis = true;
     hostName = "nuehast";
     maxUploadSize = "50G";
-    enableBrokenCiphersForSSE = false;
 
     phpOptions = {
       "opcache.interned_strings_buffer" = "10";
