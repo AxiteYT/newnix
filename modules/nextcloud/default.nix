@@ -23,4 +23,9 @@
       enableACME = true;
     };
   };
+
+  security.acme = {
+    acceptTerms = true;
+    email = "axite@axitemedia.com";
+  };
 }
