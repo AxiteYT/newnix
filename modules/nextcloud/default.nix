@@ -1,10 +1,11 @@
 { pkgs, ... }:
 {
   environment.etc."nextcloud-admin-pass".text = "Trophy-Zealous-Skier4";
-  
+
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud29;
+    home = "/media/nextcloud";
     https = false;
     database.createLocally = true;
     configureRedis = true;
