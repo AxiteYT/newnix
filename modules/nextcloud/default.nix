@@ -15,9 +15,8 @@
       autoUpdateApps.enable = true;
       extraApps = with pkgs.nextcloud29Packages.apps; {
         inherit
-          mail
           calendar
-          contact
+          contacts
           memories
           ;
       };
