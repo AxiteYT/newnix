@@ -1,3 +1,4 @@
+{ pkgs, lib, ... }:
 {
   # AdGuard Home
   services.adguardhome = {
