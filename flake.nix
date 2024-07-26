@@ -73,6 +73,10 @@
             (
               { pkgs, ... }:
               {
+                imports = [
+                  ./hardware/qemu-guest/default.nix
+                ];
+
                 systemd.services.sshd.wantedBy = nixpkgs.lib.mkForce [ "multi-user.target" ];
 
                 # Add SSH keys
