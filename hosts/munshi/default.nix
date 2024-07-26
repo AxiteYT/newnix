@@ -1,7 +1,7 @@
 {
   imports = [
     #../../modules/nixbuild/server/default.nix
-        ../server/default.nix
+    ../server/default.nix
     ./network-config.nix
   ];
 
