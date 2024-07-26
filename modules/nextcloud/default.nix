@@ -13,6 +13,15 @@
       enable = true;
       package = pkgs.nextcloud29;
       autoUpdateApps.enable = true;
+      extraApps = {
+        inherit (config.services.nextcloud.package.packages.apps)
+          contacts
+          calendar
+          tasks
+          memories
+          ;
+      };
+      extraAppsEnable = true;
       database.createLocally = true;
       configureRedis = true;
       hostName = "nuehast.axitemedia.com";
