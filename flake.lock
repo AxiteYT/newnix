@@ -40,29 +40,13 @@
         "type": "github"
       }
     },
-    "nextcloudPreconfigured": {
-      "locked": {
-        "lastModified": 1702765112,
-        "narHash": "sha256-Av1DzNdfOMCBCUQzWJMKSdjOUTUy2vFNLZX5EN9w5ws=",
-        "ref": "main",
-        "rev": "38020bed02ada78445b9d2479aa4db736dd85fea",
-        "revCount": 3,
-        "type": "git",
-        "url": "https://codeberg.org/Triton171/nixos-nextcloud-preconfigured"
-      },
-      "original": {
-        "ref": "main",
-        "type": "git",
-        "url": "https://codeberg.org/Triton171/nixos-nextcloud-preconfigured"
-      }
-    },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1721839713,
-        "narHash": "sha256-apTv16L9h5ONS2VTPbKEgwAOVmWGku0MsfprjgwBFHo=",
+        "lastModified": 1721911538,
+        "narHash": "sha256-5OrkPJsiZmNe99C6+KX0qx9sphoVLvldFjuqDYAZ8GQ=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "a7432ebaefc9a400dcda399d48b949230378d784",
+        "rev": "d3c993c851ad40bbab7e08d566138ff72cd8744f",
         "type": "github"
       },
       "original": {
@@ -74,11 +58,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1721562059,
-        "narHash": "sha256-Tybxt65eyOARf285hMHIJ2uul8SULjFZbT9ZaEeUnP8=",
+        "lastModified": 1721743106,
+        "narHash": "sha256-adRZhFpBTnHiK3XIELA3IBaApz70HwCYfv7xNrHjebA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+        "rev": "dc14ed91132ee3a26255d01d8fd0c1f5bff27b2f",
         "type": "github"
       },
       "original": {
@@ -105,11 +89,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1721874591,
-        "narHash": "sha256-P3QF9ZRRArBmE1LO+XWA3g2uA7E/g6RZTgoTHTH+9Uo=",
+        "lastModified": 1721953658,
+        "narHash": "sha256-agAtETyaPTDOdl3GdJw0L8FZ82V81NA8neSk3hY56BM=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "b5cdfd09dfc31e4d9f7f0bfd4e41b66e0170b497",
+        "rev": "29feafba5d06bf12f22ec4748482adeba1158f70",
         "type": "github"
       },
       "original": {
@@ -122,7 +106,6 @@
       "inputs": {
         "disko": "disko",
         "home-manager": "home-manager",
-        "nextcloudPreconfigured": "nextcloudPreconfigured",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
