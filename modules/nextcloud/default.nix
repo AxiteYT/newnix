@@ -13,11 +13,11 @@
       enable = true;
       package = pkgs.nextcloud29;
       autoUpdateApps.enable = true;
-      extraApps = {
-        inherit (config.services.nextcloud.package.packages.apps)
-          contacts
+      extraApps = with pkgs.nextcloud29Packages.apps; {
+        inherit
+          mail
           calendar
-          tasks
+          contact
           memories
           ;
       };
