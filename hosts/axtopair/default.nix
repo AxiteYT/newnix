@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [ ../default.nix ];
+  imports = [ ];
 
   # Add axite user
   users.users.axite = {

@@ -1,9 +1,8 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../hardware/qemu-guest/default.nix
     ../../modules/adguard/default.nix
-    ../default.nix
+    ../server/default.nix
     ./network-config.nix
   ];
 

@@ -1,8 +1,7 @@
 {
   imports = [
-    ../../hardware/qemu-guest/default.nix
     ../../modules/unifi/default.nix
-    ../default.nix
+    ../server/default.nix
     ./network-config.nix
   ];
 

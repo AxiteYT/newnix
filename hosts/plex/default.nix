@@ -1,11 +1,10 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../hardware/qemu-guest/default.nix
     ../../modules/jellyfin/default.nix
     ../../modules/plex/default.nix
     ../../mounts/plex.nix
-    ../default.nix
+    ../server/default.nix
     ./network-config.nix
   ];
 
