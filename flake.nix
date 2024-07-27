@@ -41,15 +41,16 @@
   ###########
 
   outputs =
-    inputs@{ disko
-    , home-manager
-    , nixos-hardware
-    , nixpkgs
-    , nixpkgsPinned
-    , nur
-    , self
-    , sops-nix
-    , ...
+    inputs@{
+      disko,
+      home-manager,
+      nixos-hardware,
+      nixpkgs,
+      nixpkgsPinned,
+      nur,
+      self,
+      sops-nix,
+      ...
     }:
     let
       lib = nixpkgs.lib;
