@@ -32,7 +32,7 @@
 
     # Temp pinned nixpgs for besta
     nixpkgsPinned = {
-      url = "github:nixos/nixpkgs/17fa5711308331fc30b53184524871ae41049ec8";
+      url = "github:nixos/nixpkgs/2a823de13340bc1b981e98ff9b15a5b42eee3263";
     };
   };
 
