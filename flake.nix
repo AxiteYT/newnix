@@ -29,6 +29,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Temp pinned nixpgs for besta
+    nixpkgsPinned = {
+      url = "github:nixos/nixpkgs/6dbc841749e5eb09c2bff2afeb422f6938d05c48";
+    };
   };
 
   ###########
@@ -36,18 +41,19 @@
   ###########
 
   outputs =
-    inputs@{
-      disko,
-      home-manager,
-      nixos-hardware,
-      nixpkgs,
-      nur,
-      self,
-      sops-nix,
-      ...
+    inputs@{ disko
+    , home-manager
+    , nixos-hardware
+    , nixpkgs
+    , nixpkgsPinned
+    , nur
+    , self
+    , sops-nix
+    , ...
     }:
     let
       lib = nixpkgs.lib;
+      libp = nixpkgsPinned.lib;
       user = "axite";
     in
     {
@@ -133,7 +139,7 @@
           ];
         };
 
-        besta = lib.nixosSystem {
+        besta = libp.nixosSystem {
           system = "x86_64-linux";
           modules = [
             disko.nixosModules.disko

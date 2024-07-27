@@ -14,11 +14,7 @@
       package = pkgs.nextcloud29;
       autoUpdateApps.enable = true;
       extraApps = with pkgs.nextcloud29Packages.apps; {
-        inherit
-          calendar
-          contacts
-          memories
-          ;
+        inherit calendar contacts memories;
       };
       extraAppsEnable = true;
       database.createLocally = true;
