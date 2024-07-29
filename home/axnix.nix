@@ -41,7 +41,7 @@ in
       k4dirstat
       kdenlive
       lutris
-      nixfmt
+      nixfmt-rfc-style
       patchelf
       prismlauncher # (Minecraft)
       protonup-qt
