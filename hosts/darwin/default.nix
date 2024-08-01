@@ -1,11 +1,14 @@
 { pkgs, lib, ... }:
 {
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    auto-optimise-store = false;
+  nix = {
+    useDaemon = true;
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      auto-optimise-store = false;
+    };
   };
   nixpkgs.config.allowUnfree = true;
 

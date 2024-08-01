@@ -64,6 +64,7 @@
     let
       lib = nixpkgs.lib;
       libp = nixpkgsPinned.lib;
+      dlib = darwin.lib;
       user = "axite";
     in
     {
@@ -212,8 +213,8 @@
           ];
         };
       };
-
       darwinConfigurations.axtoppro = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
         modules = [ ./hosts/axtoppro/default.nix ];
       };
     };

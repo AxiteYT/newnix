@@ -1,4 +1,1 @@
-{ }:
-{
-  imports = [ ../darwin/default.nix ];
-}
+{ imports = [ ../darwin/default.nix ]; }
