@@ -1,0 +1,4 @@
+{ }:
+{
+  imports = [ ../darwin/default.nix ];
+}

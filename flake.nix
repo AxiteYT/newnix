@@ -212,8 +212,9 @@
           ];
         };
       };
-      darwinConfigurations.axtopPro = darwin.lib.darwinSystem {
 
+      darwinConfigurations.axtoppro = darwin.lib.darwinSystem {
+        modules = [ ./hosts/axtoppro/default.nix ];
       };
     };
 }
