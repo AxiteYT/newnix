@@ -30,6 +30,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Darwin
+    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
+
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
+    };
+
     # Temp pinned nixpgs for besta
     nixpkgsPinned = {
       url = "github:nixos/nixpkgs/2a823de13340bc1b981e98ff9b15a5b42eee3263";
@@ -50,6 +58,7 @@
       nur,
       self,
       sops-nix,
+      darwin,
       ...
     }:
     let
@@ -202,6 +211,9 @@
             ./hosts/nuehast/default.nix
           ];
         };
+      };
+      darwinConfigurations.axtopPro = darwin.lib.darwinSystem {
+
       };
     };
 }
