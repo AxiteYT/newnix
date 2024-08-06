@@ -38,6 +38,12 @@
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
 
+    # WSL 
+        nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Temp pinned nixpgs for besta
     nixpkgsPinned = {
       url = "github:nixos/nixpkgs/2a823de13340bc1b981e98ff9b15a5b42eee3263";
@@ -58,6 +64,7 @@
       nur,
       self,
       sops-nix,
+      nixos-wsl,
       darwin,
       ...
     }:
