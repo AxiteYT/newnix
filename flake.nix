@@ -234,6 +234,7 @@
           modules = [
             nixos-wsl.nixosModules.wsl
             ./configuration.nix
+            ./hosts/wsl/default.nix
           ];
         };
       };
