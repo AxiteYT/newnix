@@ -39,7 +39,7 @@
     };
 
     # WSL 
-        nixos-wsl = {
+    nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -219,7 +219,16 @@
             ./hosts/nuehast/default.nix
           ];
         };
+
+        WSL = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            nixos-wsl.nixosModules.wsl
+            ./configuration.nix
+          ];
+        };
       };
+
       darwinConfigurations.axtoppro = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [ ./hosts/axtoppro/default.nix ];
