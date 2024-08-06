@@ -144,6 +144,7 @@
 
             # Configuration
             ./configuration.nix
+            ./disk-config.nix
             ./hosts/axnix/default.nix
           ];
         };
@@ -153,6 +154,7 @@
           modules = [
             disko.nixosModules.disko
             ./configuration.nix
+            ./disk-config.nix
             ./hosts/axtopair/default.nix
           ];
         };
@@ -162,6 +164,7 @@
           modules = [
             disko.nixosModules.disko
             ./configuration.nix
+            ./disk-config.nix
             ./hosts/besta/default.nix
           ];
         };
@@ -171,6 +174,7 @@
           modules = [
             disko.nixosModules.disko
             ./configuration.nix
+            ./disk-config.nix
             ./hosts/plex/default.nix
           ];
         };
@@ -180,6 +184,7 @@
           modules = [
             disko.nixosModules.disko
             ./configuration.nix
+            ./disk-config.nix
             ./hosts/munshi/default.nix
           ];
         };
@@ -189,6 +194,7 @@
           modules = [
             disko.nixosModules.disko
             ./configuration.nix
+            ./disk-config.nix
             ./hosts/jeli/default.nix
           ];
         };
@@ -198,6 +204,7 @@
           modules = [
             disko.nixosModules.disko
             ./configuration.nix
+            ./disk-config.nix
             ./hosts/elan/default.nix
           ];
         };
@@ -207,6 +214,7 @@
           modules = [
             disko.nixosModules.disko
             ./configuration.nix
+            ./disk-config.nix
             ./hosts/xyz/default.nix
           ];
         };
@@ -216,6 +224,7 @@
           modules = [
             disko.nixosModules.disko
             ./configuration.nix
+            ./disk-config.nix
             ./hosts/nuehast/default.nix
           ];
         };
