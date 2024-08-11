@@ -179,6 +179,7 @@
       "neovim"
       "nettle"
       "ninja"
+      "node@20"
       "numpy"
       "openblas"
       "opencore-amr"
