@@ -43,11 +43,6 @@
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Temp pinned nixpgs for besta
-    nixpkgsPinned = {
-      url = "github:nixos/nixpkgs/2a823de13340bc1b981e98ff9b15a5b42eee3263";
-    };
   };
 
   ###########
@@ -60,7 +55,6 @@
       home-manager,
       nixos-hardware,
       nixpkgs,
-      nixpkgsPinned,
       nur,
       self,
       sops-nix,
@@ -70,7 +64,6 @@
     }:
     let
       lib = nixpkgs.lib;
-      libp = nixpkgsPinned.lib;
       dlib = darwin.lib;
       user = "axite";
     in
@@ -159,7 +152,7 @@
           ];
         };
 
-        besta = libp.nixosSystem {
+        besta = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             disko.nixosModules.disko
