@@ -20,11 +20,7 @@
             prefixLength = 24;
           }
           {
-            address = "10.1.20.0";
-            prefixLength = 24;
-          }
-          {
-            address = "10.1.30.0";
+            address = "10.1.1.0";
             prefixLength = 24;
           }
         ];
