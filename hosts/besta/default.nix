@@ -8,6 +8,8 @@
     ./network-config.nix
   ];
 
+  environment.systemPackages = with pkgs; [ ffmpeg ];
+
   # Add besta user
   users.users.besta = {
     isNormalUser = true;
