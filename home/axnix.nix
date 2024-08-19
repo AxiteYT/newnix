@@ -28,7 +28,7 @@ in
       bitwarden
       blender
       brave
-      #davinci-resolve
+      davinci-resolve
       discord
       dolphinEmu
       filezilla
@@ -50,7 +50,7 @@ in
       runelite
       runescape
       spotify
-      #unityhub
+      unityhub
       virt-viewer
       vlc
       vscodium
