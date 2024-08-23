@@ -8,7 +8,7 @@
   # Disable DHCP
   networking = {
     useDHCP = false;
-    defaultGateway = "10.0.1.1";
-    nameservers = [ "10.0.1.1" ];
+    defaultGateway = "192.168.1.1";
+    nameservers = [ "192.168.1.1" ];
   };
 }
