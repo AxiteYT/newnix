@@ -6,5 +6,9 @@
   ];
 
   # Disable DHCP
-  networking.useDHCP = false;
+  networking = {
+    useDHCP = false;
+    defaultGateway = "10.0.1.1";
+    nameservers = [ "10.0.1.1" ];
+  };
 }
