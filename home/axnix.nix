@@ -21,6 +21,7 @@ in
     # Editor
     sessionVariables = {
       EDITOR = "nano";
+      TERMINAL = "alacritty";
     };
 
     # Packages

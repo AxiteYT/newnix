@@ -18,6 +18,7 @@
   services.openssh.enable = true;
 
   environment.systemPackages = with pkgs; [
+    alacritty
     btop
     curl
     gawk
