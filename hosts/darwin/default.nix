@@ -42,6 +42,7 @@
     taps = [ ];
     brews = [
       "abseil"
+      "alacritty"
       "aom"
       "aribb24"
       "at-spi2-core"
