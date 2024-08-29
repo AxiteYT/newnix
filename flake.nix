@@ -192,16 +192,6 @@
           ];
         };
 
-        elan = lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            disko.nixosModules.disko
-            ./configuration.nix
-            ./disk-config.nix
-            ./hosts/elan/default.nix
-          ];
-        };
-
         xyz = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
@@ -222,7 +212,7 @@
           ];
         };
 
-        WSL = lib.nixosSystem {
+        wsl = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             nixos-wsl.nixosModules.wsl
