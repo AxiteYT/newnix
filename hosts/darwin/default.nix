@@ -252,8 +252,8 @@
 
   # Shell
   security.pam.enableSudoTouchIdAuth = true;
-  programs.zsh.enable = true;
-  environment.shells = [ pkgs.zsh ];
+  environment.systemPackages = with pkgs; [ alacritty ];
+  environment.shells = [ pkgs.alacritty ];
 
   # Timezone
   time.timeZone = "Australia/Sydney";
