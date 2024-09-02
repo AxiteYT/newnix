@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, nixpkgs, lib, ... }:
 {
   imports = [ ./alacritty.nix ];
 
