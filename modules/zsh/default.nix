@@ -1,7 +1,10 @@
-{ pkgs, nixpkgs, lib, ... }:
 {
-  imports = [ ./alacritty.nix ];
-
+  pkgs,
+  nixpkgs,
+  lib,
+  ...
+}:
+{
   programs = {
     alacritty = {
       enable = true;
