@@ -135,7 +135,7 @@ in
             owner = "zdharma";
             repo = "fast-syntax-highlighting";
             rev = "v1.66";
-            sha256 = lib.fakeSha256;
+            sha256 = "sha256-uoLrXfq31GvfHO6GTrg7Hus8da2B4SCM1Frc+mRFbFc=";
           };
         }
         {
