@@ -5,7 +5,6 @@
     ../../modules/flatpak/default.nix
     ../../modules/kde/default.nix
     ../../modules/steam/default.nix
-    ../../modules/zsh/default.nix
     ../../mounts/apollo.nix
     ../default.nix
     ./kernel.nix
