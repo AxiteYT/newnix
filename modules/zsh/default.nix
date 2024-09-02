@@ -48,7 +48,7 @@
             owner = "zsh-users";
             repo = "zsh-autosuggestions";
             rev = "v0.7.0";
-            sha256 = ninixpkgs.lib.fakeSha256;
+            sha256 = nixpkgs.lib.fakeSha256;
           };
         }
         {
