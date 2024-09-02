@@ -126,7 +126,7 @@ in
             owner = "zsh-users";
             repo = "zsh-autosuggestions";
             rev = "v0.7.0";
-            sha256 = nixpkgs.lib.fakeSha256;
+            sha256 = lib.fakeSha256;
           };
         }
         {
@@ -135,7 +135,7 @@ in
             owner = "zdharma";
             repo = "fast-syntax-highlighting";
             rev = "v1.66";
-            sha256 = nixpkgs.lib.fakeSha256;
+            sha256 = lib.fakeSha256;
           };
         }
         {
