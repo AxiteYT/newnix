@@ -1,11 +1,11 @@
 {
   imports = [
-    ../qbittorrent/default.nix
-    ./bazarr/default.nix
-    ./flaresolverr/default.nix
-    ./prowlarr/default.nix
-    ./radarr/default.nix
-    ./sonarr/default.nix
+    ../qbittorrent
+    ./bazarr
+    ./flaresolverr
+    ./prowlarr
+    ./radarr
+    ./sonarr
   ];
 
   users.groups.servarr = { };

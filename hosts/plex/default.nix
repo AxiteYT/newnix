@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../modules/jellyfin/default.nix
-    ../../modules/plex/default.nix
+    ../../modules/jellyfin
+    ../../modules/plex
     ../../mounts/plex.nix
-    ../server/default.nix
+    ../server
     ./network-config.nix
   ];
 

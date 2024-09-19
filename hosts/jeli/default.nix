@@ -1,7 +1,7 @@
 {
   imports = [
-    ../../modules/unifi/default.nix
-    ../server/default.nix
+    ../../modules/unifi
+    ../server
     ./network-config.nix
   ];
 

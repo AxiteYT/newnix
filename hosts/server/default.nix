@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ../../hardware/qemu-guest/default.nix
+    ../../hardware/qemu-guest
     ../default.nix
   ];
 

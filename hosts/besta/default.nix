@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../modules/servarr/default.nix
-    ../../modules/wireguard/default.nix
+    ../../modules/servarr
+    ../../modules/wireguard
     ../../mounts/plex.nix
-    ../server/default.nix
+    ../server
     ./network-config.nix
   ];
 

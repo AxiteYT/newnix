@@ -1,7 +1,7 @@
 {
   imports = [
-    ../../modules/netbootxyz/default.nix
-    ../server/default.nix
+    ../../modules/netbootxyz
+    ../server
     ./network-config.nix
   ];
 

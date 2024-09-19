@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../hardware/amd/default.nix
-    ../../modules/flatpak/default.nix
-    ../../modules/kde/default.nix
-    ../../modules/steam/default.nix
+    ../../hardware/amd
+    ../../modules/flatpak
+    ../../modules/kde
+    ../../modules/steam
     ../../mounts/apollo.nix
     ../default.nix
     ./kernel.nix

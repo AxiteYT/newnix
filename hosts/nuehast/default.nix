@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../modules/nextcloud/default.nix
+    ../../modules/nextcloud
     ../../mounts/nextcloud.nix
-    ../server/default.nix
+    ../server
     ./network-config.nix
   ];
 

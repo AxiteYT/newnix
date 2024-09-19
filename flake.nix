@@ -90,7 +90,7 @@
             (
               { pkgs, ... }:
               {
-                imports = [ ./hardware/qemu-guest/default.nix ];
+                imports = [ ./hardware/qemu-guest ];
 
                 systemd.services.sshd.wantedBy = nixpkgs.lib.mkForce [ "multi-user.target" ];
 
@@ -138,7 +138,7 @@
             # Configuration
             ./configuration.nix
             ./disk-config.nix
-            ./hosts/axnix/default.nix
+            ./hosts/axnix
           ];
         };
 
@@ -148,7 +148,7 @@
             disko.nixosModules.disko
             ./configuration.nix
             ./disk-config.nix
-            ./hosts/axtopair/default.nix
+            ./hosts/axtopair
           ];
         };
 
@@ -158,7 +158,7 @@
             disko.nixosModules.disko
             ./configuration.nix
             ./disk-config.nix
-            ./hosts/besta/default.nix
+            ./hosts/besta
           ];
         };
 
@@ -168,7 +168,7 @@
             disko.nixosModules.disko
             ./configuration.nix
             ./disk-config.nix
-            ./hosts/plex/default.nix
+            ./hosts/plex
           ];
         };
 
@@ -178,7 +178,7 @@
             disko.nixosModules.disko
             ./configuration.nix
             ./disk-config.nix
-            ./hosts/munshi/default.nix
+            ./hosts/munshi
           ];
         };
 
@@ -188,7 +188,7 @@
             disko.nixosModules.disko
             ./configuration.nix
             ./disk-config.nix
-            ./hosts/jeli/default.nix
+            ./hosts/jeli
           ];
         };
 
@@ -198,7 +198,7 @@
             disko.nixosModules.disko
             ./configuration.nix
             ./disk-config.nix
-            ./hosts/xyz/default.nix
+            ./hosts/xyz
           ];
         };
 
@@ -208,7 +208,7 @@
             disko.nixosModules.disko
             ./configuration.nix
             ./disk-config.nix
-            ./hosts/nuehast/default.nix
+            ./hosts/nuehast
           ];
         };
 
@@ -217,14 +217,14 @@
           modules = [
             nixos-wsl.nixosModules.wsl
             ./configuration.nix
-            ./hosts/wsl/default.nix
+            ./hosts/wsl
           ];
         };
       };
 
       darwinConfigurations.axtoppro = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        modules = [ ./hosts/axtoppro/default.nix ];
+        modules = [ ./hosts/axtoppro ];
       };
     };
 }
