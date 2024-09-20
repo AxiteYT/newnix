@@ -11,17 +11,6 @@
     ./network-config.nix
   ];
 
-  # Add axite user
-  users.users.axite = {
-    isNormalUser = true;
-    description = "Kyle Smith";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      # "flatpak"
-    ];
-  };
-
   # System Packages
   environment.systemPackages = with pkgs; [
     cargo
