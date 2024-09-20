@@ -146,6 +146,7 @@
           system = "x86_64-linux";
           modules = [
             disko.nixosModules.disko
+            sops-nix.nixosModules.sops
             ./configuration.nix
             ./disk-config.nix
             ./hosts/axtopair
@@ -156,6 +157,7 @@
           system = "x86_64-linux";
           modules = [
             disko.nixosModules.disko
+            sops-nix.nixosModules.sops
             ./configuration.nix
             ./disk-config.nix
             ./hosts/besta
@@ -166,6 +168,7 @@
           system = "x86_64-linux";
           modules = [
             disko.nixosModules.disko
+            sops-nix.nixosModules.sops
             ./configuration.nix
             ./disk-config.nix
             ./hosts/plex
@@ -176,6 +179,7 @@
           system = "x86_64-linux";
           modules = [
             disko.nixosModules.disko
+            sops-nix.nixosModules.sops
             ./configuration.nix
             ./disk-config.nix
             ./hosts/munshi
@@ -186,6 +190,7 @@
           system = "x86_64-linux";
           modules = [
             disko.nixosModules.disko
+            sops-nix.nixosModules.sops
             ./configuration.nix
             ./disk-config.nix
             ./hosts/jeli
@@ -196,6 +201,7 @@
           system = "x86_64-linux";
           modules = [
             disko.nixosModules.disko
+            sops-nix.nixosModules.sops
             ./configuration.nix
             ./disk-config.nix
             ./hosts/xyz
@@ -206,6 +212,7 @@
           system = "x86_64-linux";
           modules = [
             disko.nixosModules.disko
+            sops-nix.nixosModules.sops
             ./configuration.nix
             ./disk-config.nix
             ./hosts/nuehast
@@ -216,6 +223,7 @@
           system = "x86_64-linux";
           modules = [
             nixos-wsl.nixosModules.wsl
+            sops-nix.nixosModules.sops
             ./configuration.nix
             ./hosts/wsl
           ];
