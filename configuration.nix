@@ -25,6 +25,7 @@
     htop
     killall
     neofetch
+    ookla-speedtest
     tree
     unzip
     wget
