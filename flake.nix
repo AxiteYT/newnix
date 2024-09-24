@@ -7,6 +7,7 @@
     # Nixpkgs
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
+    # SOPS
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,17 +33,13 @@
 
     # Darwin
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
-
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
 
     # WSL 
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
   };
 
   ###########
@@ -222,7 +219,11 @@
         wsl = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            nixos-wsl.nixosModules.wsl
+            nixos-wsl.nixosModules.default
+            {
+              system.stateVersion = "24.05";
+              wsl.enable = true;
+            }
             sops-nix.nixosModules.sops
             ./configuration.nix
             ./hosts/wsl

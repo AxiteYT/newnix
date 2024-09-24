@@ -6,15 +6,9 @@
 }:
 
 {
-  imports = [
-    # include NixOS-WSL modules
-    <nixos-wsl/modules>
-  ];
-
-  wsl = {
-    enable = true;
-    defaultUser = "nixos";
-  };
+  imports =
+    [
+    ];
 
   boot.isContainer = true;
 }
