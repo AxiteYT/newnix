@@ -33,29 +33,27 @@
   };
   programgs.alacritty = {
     enable = true;
-
     settings = {
-
       font = {
         normal.family = "JetbrainsMono Nerd Font";
       };
-
-      background_opacity = 0.3;
-
+      window = {
+        opacity = 0.2;
+        blur = true;
+        dynamic_padding = true;
+      };
       shell = {
         program = "${pkgs.zsh}/bin/zsh";
       };
     };
   };
+
   programs.zsh = {
     enable = true;
-    initExtraFirst = ''
-      [ ! -d "$HOME/.zsh/fsh/" ] && mkdir $HOME/.zsh/fsh/
-      export FAST_WORK_DIR=$HOME/.zsh/fsh/;
-      export PATH=$PATH:~/tools
-      export PATH=$PATH:~/.npm-global/bin
-      export PATH="$PATH:/home/thomas/.protostar/dist/protostar"
-    '';
+    ohMyZsh = {
+      enable = true;
+    };
+    initExtraFirst = '''';
     plugins = [
       {
         name = "zsh-autosuggestions";
