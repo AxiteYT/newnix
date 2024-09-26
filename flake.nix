@@ -7,6 +7,9 @@
     # Nixpkgs
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
+    # flake-utils
+    flake-utils.url = "github:numtide/flake-utils";
+
     # SOPS
     sops-nix = {
       url = "github:Mic92/sops-nix";
