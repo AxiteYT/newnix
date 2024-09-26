@@ -12,7 +12,6 @@
     config = {
       enabled_plugins = [ "Label" "Scheduler" ];
       outgoing_interface = "wg0";
-      listen_interface = "wg0";
     };
   };
 }
