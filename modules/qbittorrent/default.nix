@@ -2,8 +2,6 @@
 {
   imports = [ ../services/torrent/qbittorrent.nix ];
 
-  environment.systemPackages = with pkgs; [ certbot-full ];
-
   services.qbittorrent = {
     enable = true;
     openFirewall = true;

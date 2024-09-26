@@ -1,7 +1,6 @@
 {
   imports = [
-    #../qbittorrent
-    ../deluge
+    ../qbittorrent
     ./bazarr
     ./flaresolverr
     ./prowlarr

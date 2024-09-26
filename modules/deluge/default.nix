@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  #TODO: Depricated, remove this module when mind is made up.
+  /*
   services.deluge = {
     enable = true;
     group = "servarr";
@@ -19,4 +21,5 @@
       outgoing_interface = "wg0";
     };
   };
+  */
 }
