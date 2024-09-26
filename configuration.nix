@@ -26,6 +26,7 @@
     killall
     neofetch
     ookla-speedtest
+    tmux
     tree
     unzip
     wget
