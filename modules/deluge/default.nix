@@ -3,7 +3,6 @@
     enable = true;
     group = "servarr";
     declarative = true;
-    dataDir = "/media/Plex/Downloads";
     authFile = pkgs.writeTextFile {
       name = "deluge-auth";
       text = ''
