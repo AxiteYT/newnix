@@ -3,7 +3,7 @@
   imports = [
     ../../modules/servarr
     ../../modules/wireguard
-    ../../modules/xfce
+    #../../modules/xfce
     ../../mounts/plex.nix
     ../server
     ./network-config.nix
