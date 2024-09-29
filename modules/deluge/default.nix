@@ -2,24 +2,24 @@
 {
   #TODO: Depricated, remove this module when mind is made up.
   /*
-  services.deluge = {
-    enable = true;
-    group = "servarr";
-    declarative = true;
-    authFile = pkgs.writeTextFile {
-      name = "deluge-auth";
-      text = ''
-        localclient::10
-      '';
-    };
-    web = {
+    services.deluge = {
       enable = true;
-      openFirewall = true;
+      group = "servarr";
+      declarative = true;
+      authFile = pkgs.writeTextFile {
+        name = "deluge-auth";
+        text = ''
+          localclient::10
+        '';
+      };
+      web = {
+        enable = true;
+        openFirewall = true;
+      };
+      config = {
+        enabled_plugins = [ "Label" "Scheduler" ];
+        outgoing_interface = "wg0";
+      };
     };
-    config = {
-      enabled_plugins = [ "Label" "Scheduler" ];
-      outgoing_interface = "wg0";
-    };
-  };
   */
 }
