@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   home = {
     # User Definition
@@ -31,7 +31,7 @@
     EDITOR = "nano";
     TERMINAL = "alacritty";
   };
-  programgs.alacritty = {
+  programs.alacritty = {
     enable = true;
     settings = {
       font = {
@@ -80,8 +80,8 @@
       }
       {
         name = "powerlevel10k-config";
-        src = lib.cleanSource ./p10k-config;
-        file = "p10k.zsh";
+        src = lib.cleanSource ./zsh;
+        file = if pkgs.stdenv.isDarwin then "darwin.zsh" else "p10k.zsh";
       }
     ];
   };
