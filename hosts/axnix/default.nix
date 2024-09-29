@@ -27,6 +27,7 @@
     patchelf
     powershell
     protontricks
+    rpcs3
     steamcmd
     vim
     vlc
