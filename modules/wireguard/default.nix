@@ -1,7 +1,9 @@
 { pkgs, ... }:
 {
   # WG Application
-  environment.systemPackages = with pkgs; [ wireguard-tools ];
+  environment.systemPackages = with pkgs; [
+    wireguard-tools libnatpmp
+  ];
 
   # WireGuard VPN Configuration
   networking.wg-quick.interfaces = {
@@ -32,6 +34,8 @@
         ${pkgs.iptables}/bin/iptables -t mangle -D OUTPUT ! -o wg0 -d 192.168.1.0/24 -j ACCEPT
         ${pkgs.iptables}/bin/iptables -t mangle -D OUTPUT ! -o wg0 -d 10.1.1.0/24 -j ACCEPT
         ${pkgs.iptables}/bin/iptables -t mangle -D OUTPUT ! -o wg0 -m mark --mark 0 -j MARK --set-xmark 0
+
+        ${pkgs.libnatpmp}/bin/natpmpc -a 1 0 tcp 26504 -g 10.2.0.1
       '';
     };
   };
