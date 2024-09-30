@@ -53,5 +53,8 @@
     };
   };
 
+  # Set kernel to use latest Linux kernel
+  boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
+
   system.stateVersion = "24.05";
 }
