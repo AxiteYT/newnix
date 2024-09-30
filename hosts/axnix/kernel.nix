@@ -8,7 +8,7 @@
 {
   # Set the system to use the XanMod kernel
   boot = {
-    kernelPackages = lib.mkForce linux_xanmod_latest;
+    kernelPackages = lib.mkForce pkgs.linuxKernel.packages.linux_xanmod_latest;
 
     initrd = {
       availableKernelModules = [
