@@ -2,7 +2,8 @@
 {
   # WG Application
   environment.systemPackages = with pkgs; [
-    wireguard-tools libnatpmp
+    wireguard-tools
+    libnatpmp
   ];
 
   # WireGuard VPN Configuration
