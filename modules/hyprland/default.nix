@@ -1,5 +1,12 @@
 { pkgs, ... }:
 {
+  # Enable Cachix
+  nix.settings = {
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+  };
+
+  # Enabel hyprland
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -7,12 +14,13 @@
 
   # System Packages
   environment.systemPackages = with pkgs; [
-    waybar
-    eww
     dunst
+    eww
+    kitty
     libnotify
-    swww
     rofi-wayland
+    swww
+    waybar
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
