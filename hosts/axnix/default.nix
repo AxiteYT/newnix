@@ -3,8 +3,8 @@
   imports = [
     ../../hardware/amd
     ../../modules/flatpak
-    ../../modules/hyprland
-    #../../modules/kde
+    #../../modules/hyprland
+    ../../modules/kde
     ../../modules/steam
     ../../mounts/apollo.nix
     ../default.nix
