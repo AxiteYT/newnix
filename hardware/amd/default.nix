@@ -7,7 +7,7 @@
   };
 
   # Enable Redistributable Firmware
-  enableRedistributableFirmware = true;
+  hardware.enableRedistributableFirmware = true;
 
   # Set GPU in kenel
   boot.initrd.kernelModules = [ "amdgpu" ];
