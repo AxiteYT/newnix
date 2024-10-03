@@ -17,12 +17,13 @@
           publicKey = "zD4qEIk4HqXDJ5vHE9G34EUUhEybyBhA/Gs8NrfOdmI=";
           endpoint = "146.70.174.194:51820";
           allowedIPs = [ "0.0.0.0/0" ];
+          persistentKeepalive = 25;
         }
       ];
 
       # postRules to allow localtraffic
       postUp = ''
-        wg set wg0 fwmark 51820
+        wg set wg0 fwmark 51820 
         ${pkgs.iptables}/bin/iptables -t mangle -A OUTPUT -o wg0 -m mark --mark $(wg show wg0 fwmark) -j ACCEPT
         ${pkgs.iptables}/bin/iptables -t mangle -A OUTPUT ! -o wg0 -m addrtype --dst-type LOCAL -j ACCEPT
         ${pkgs.iptables}/bin/iptables -t mangle -A OUTPUT ! -o wg0 -d 192.168.1.0/24 -j ACCEPT
