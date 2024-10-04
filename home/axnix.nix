@@ -85,7 +85,10 @@ in
       enable = true;
       settings = {
         font = {
-          normal.family = "JetbrainsMono Nerd Font";
+          normal = {
+            family = "JetBrainsMono Nerd Font";
+            style = "Regular";
+          };
         };
         window = {
           opacity = 0.2;
