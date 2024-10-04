@@ -81,22 +81,22 @@ in
       ];
     };
 
-  alacritty = {
-    enable = true;
-    settings = {
-      font = {
-        normal.family = "JetbrainsMono Nerd Font";
-      };
-      window = {
-        opacity = 0.2;
-        blur = true;
-        dynamic_padding = true;
-      };
-      shell = {
-        program = "${pkgs.zsh}/bin/zsh";
+    alacritty = {
+      enable = true;
+      settings = {
+        font = {
+          normal.family = "JetbrainsMono Nerd Font";
+        };
+        window = {
+          opacity = 0.2;
+          blur = true;
+          dynamic_padding = true;
+        };
+        shell = {
+          program = "${pkgs.zsh}/bin/zsh";
+        };
       };
     };
-  };
 
     zsh = {
       enable = true;
