@@ -86,8 +86,15 @@ in
       settings = {
         font = {
           normal = {
-            family = "JetBrainsMono Nerd Font";
-            style = "Regular";
+            family = "Fira Code";
+            style = "Retina";
+          };
+          bold = {
+            family = "Fira Code";
+            style = "Bold";
+          };
+          italic = {
+            family = "Fira Code";
           };
         };
         window = {

@@ -34,6 +34,8 @@
   # Fonts
   fonts = {
     packages = with pkgs; [
+      fira-code
+      fira-code-symbols
       font-awesome
       hunspellDicts.en_AU
       hunspellDicts.en_US
