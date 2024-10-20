@@ -29,7 +29,6 @@
     powershell
     protontricks
     rpcs3
-    steamcmd
     vim
     vlc
     wayland-utils
