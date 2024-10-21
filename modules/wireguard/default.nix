@@ -61,18 +61,20 @@
 
     serviceConfig = {
       Type = "simple";
-      ExecStart = "${pkgs.bash}/bin/bash -c '\
-        ${pkgs.libnatpmp}/bin/natpmpc -a 26504 26504 udp 60 -g 10.2.0.1; \
-        ${pkgs.libnatpmp}/bin/natpmpc -a 26504 26504 tcp 60 -g 10.2.0.1; \
-        while true; do \
-            date; \
-            ${pkgs.libnatpmp}/bin/natpmpc -a 26504 26504 udp 60 -g 10.2.0.1 && \
-            ${pkgs.libnatpmp}/bin/natpmpc -a 26504 26504 tcp 60 -g 10.2.0.1 || { \
-                echo -e \"ERROR with natpmpc command \a\"; \
-                break; \
-            }; \
-            sleep 45; \
-        done'";
+      ExecStart = ''
+        ${pkgs.bash}/bin/bash -c '
+          ${pkgs.libnatpmp}/bin/natpmpc -a 26504 26504 udp 60 -g 10.2.0.1;
+          ${pkgs.libnatpmp}/bin/natpmpc -a 26504 26504 tcp 60 -g 10.2.0.1;
+          while true; do
+              date;
+              ${pkgs.libnatpmp}/bin/natpmpc -a 26504 26504 udp 60 -g 10.2.0.1 &&
+              ${pkgs.libnatpmp}/bin/natpmpc -a 26504 26504 tcp 60 -g 10.2.0.1 || {
+                  echo -e "ERROR with natpmpc command \a";
+                  break;
+              };
+              sleep 45;
+          done'
+      '';
       Restart = "always";
       RestartSec = 5;
     };
