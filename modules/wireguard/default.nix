@@ -58,6 +58,7 @@
       "wg-quick-wg0.service"
     ];
     requires = [ "wg-quick-wg0.service" ];
+    wantedBy = [ "multi-user.target" ];
 
     script = ''
       ${pkgs.libnatpmp}/bin/natpmpc -a 26504 26504 udp 60 -g 10.2.0.1
