@@ -31,7 +31,7 @@ in
       brave
       davinci-resolve
       discord
-      dolphinEmu
+      dolphin-emu
       filezilla
       gh
       gimp
