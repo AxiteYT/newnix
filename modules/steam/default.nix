@@ -11,8 +11,5 @@
     gamescopeSession = {
       enable = true;
     };
-
-    # Packages
-    extraCompatPackages = with pkgs; [ proton-ge-bin ];
   };
 }
