@@ -9,12 +9,6 @@
       # Enable OpenCL
       extraPackages = with pkgs; [ rocmPackages.clr.icd ];
     };
-
-    # Enable Vulkan
-    opengl = {
-      driSupport = true;
-      driSupport32Bit = true;
-    };
   };
 
   # HIP Config
