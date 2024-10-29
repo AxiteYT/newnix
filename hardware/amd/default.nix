@@ -1,20 +1,44 @@
 { pkgs, ... }:
 {
-  # Enable GPU Drivers
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
+  # Enable GPU Driivers
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+
+      # Enable OpenCL
+      extraPackages = with pkgs; [ rocmPackages.clr.icd ];
+    };
+
+    # Enable Vulkan
+    opengl = {
+      driSupport = true;
+      driSupport32Bit = true;
+    };
   };
 
-  # Enable Redistributable Firmware
-  hardware.enableRedistributableFirmware = true;
+  # HIP Config
+  systemd = {
+    tmpfiles.rules =
+      let
+        rocmEnv = pkgs.symlinkJoin {
+          name = "rocm-combined";
+          paths = with pkgs.rocmPackages; [
+            rocblas
+            hipblas
+            clr
+          ];
+        };
+      in
+      [
+        "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+      ];
 
-  # Set GPU in kenel
-  boot.initrd.kernelModules = [ "amdgpu" ];
+    # LACT
+    packages = with pkgs; [ lact ];
+    services.lactd.wantedBy = [ "multi-user.target" ];
+  };
 
-  # Set XServer/Wayland to use AMD
-  services.xserver.videoDrivers = [ "amdgpu" ];
-
-  # HIP Libraries override
-  systemd.tmpfiles.rules = [ "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}" ];
+  # LACT Package
+  environment.systemPackages = with pkgs; [ lact ];
 }
