@@ -6,10 +6,5 @@
     # Networking
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
-
-    # Gamescope
-    gamescopeSession = {
-      enable = true;
-    };
   };
 }
