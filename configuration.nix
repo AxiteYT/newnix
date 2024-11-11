@@ -53,6 +53,15 @@
     };
   };
 
+  # Garbage Collection
+  nix = {
+    gc = {
+      automatic = true;
+      randomizedDelaySec = "14m";
+      options = "--delete-older-than 10d";
+    };
+  };
+
   # Set kernel to use latest Linux kernel
   boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
 
