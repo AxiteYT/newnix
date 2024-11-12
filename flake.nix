@@ -10,6 +10,9 @@
     # flake-utils
     flake-utils.url = "github:numtide/flake-utils";
 
+    # Temp flake while flaresolverr has broken Chromium >:(
+    nixpkgs-flaresolverr-chromium-126.url = "github:nixos/nixpkgs/ebbc0409688869938bbcf630da1c1c13744d2a7b";
+
     # SOPS
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -55,6 +58,7 @@
       home-manager,
       nixos-hardware,
       nixpkgs,
+      nixpkgs-flaresolverr-chromium-126,
       nur,
       self,
       sops-nix,
@@ -155,6 +159,14 @@
 
         besta = lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = {
+            inherit
+              inputs
+              self
+              user
+              nixpkgs-flaresolverr-chromium-126
+              ;
+          };
           modules = [
             disko.nixosModules.disko
             sops-nix.nixosModules.sops

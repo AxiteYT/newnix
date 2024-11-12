@@ -1,15 +1,18 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  inputs,
+  nixpkgs-flaresolverr-chromium-126,
+  ...
+}:
 {
   imports = [
     ../../modules/servarr
     ../../modules/wireguard
-    #../../modules/xfce
     ../../mounts/plex.nix
     ../server
     ./network-config.nix
   ];
-
-  environment.systemPackages = with pkgs; [ ffmpeg ];
 
   # Add besta user
   users.users.besta = {
