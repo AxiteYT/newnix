@@ -21,6 +21,7 @@
     input-remapper
     killall
     lutris
+    libreoffice-qt
     neovim
     nixpkgs-fmt
     ntfs3g

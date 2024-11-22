@@ -39,7 +39,6 @@
       font-awesome
       hunspellDicts.en_AU
       hunspellDicts.en_US
-      libreoffice-qt
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
