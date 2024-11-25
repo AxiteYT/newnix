@@ -6,7 +6,6 @@
   ...
 }:
 {
-  # Set the system to use the XanMod kernel
   boot = {
     initrd = {
       availableKernelModules = [
