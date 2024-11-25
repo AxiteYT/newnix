@@ -8,7 +8,7 @@
     ../../modules/steam
     ../../mounts/apollo.nix
     ../default.nix
-    #./kernel.nix
+    ./kernel.nix
     ./network-config.nix
   ];
 
