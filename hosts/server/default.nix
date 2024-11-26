@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    (modulesPath + "/profiles/qemu-guest.nix")
     ../../hardware/qemu-guest
     ../default.nix
   ];

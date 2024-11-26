@@ -7,7 +7,7 @@
 }:
 {
   imports = [
-    (modulesPath + "/profiles/qemu-guest.nix")
+    (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
   # Enable SSH
