@@ -16,8 +16,6 @@
         "sd_mod"
         "uas"
         "usbhid"
-        "iwlmvm"
-        "iwlwifi"
         "xhci_pci"
       ];
       kernelModules = [ ];
