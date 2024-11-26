@@ -102,7 +102,7 @@ in
           blur = true;
           dynamic_padding = true;
         };
-        shell = {
+        terminal.shell = {
           program = "${pkgs.zsh}/bin/zsh";
         };
       };
