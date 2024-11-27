@@ -50,6 +50,7 @@ in
       remmina
       runelite
       runescape
+      ryujinx
       spotify
       unityhub
       virt-viewer
