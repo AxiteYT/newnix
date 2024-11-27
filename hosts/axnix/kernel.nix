@@ -7,7 +7,7 @@
 }:
 {
   boot = {
-    kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod;
+    kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod_latest;
 
     initrd = {
       availableKernelModules = [
