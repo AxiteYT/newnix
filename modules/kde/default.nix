@@ -64,7 +64,10 @@
   };
 
   # KDE Packages
-  environment.systemPackages = [ pkgs.kdePackages.knotifications ];
+  environment.systemPackages = with pkgs; [
+    kdePackages.knotifications
+    kdePackages.kalk
+  ];
 
   # Enable dconf
   programs.dconf.enable = true;
