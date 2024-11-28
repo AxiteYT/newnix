@@ -75,6 +75,7 @@ in
       enable = true;
       package = pkgs.obs-studio;
       plugins = map (plugin: pkgs.obs-studio-plugins.${plugin}) [
+        "obs-backgroundremoval"
         "obs-gstreamer"
         "obs-vaapi"
         "obs-vkcapture"
