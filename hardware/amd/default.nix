@@ -14,6 +14,19 @@
     services.lactd.wantedBy = [ "multi-user.target" ];
   };
 
-  # LACT Package
-  environment.systemPackages = with pkgs; [ lact ];
+  # HIP hard-code workaround
+  systemd.tmpfiles.rules =
+    let
+      rocmEnv = pkgs.symlinkJoin {
+        name = "rocm-combined";
+        paths = with pkgs.rocmPackages; [
+          rocblas
+          hipblas
+          clr
+        ];
+      };
+    in
+    [
+      "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+    ];
 }
