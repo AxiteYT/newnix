@@ -266,14 +266,14 @@
       font-awesome
       #TODO: Fix below when there is more doco for the breaking change:
       /*
-      (nerdfonts.override {
-        fonts = [
-          "NerdFontsSymbolsOnly"
-          "FiraCode"
-          "JetBrainsMono"
-          "Iosevka"
-        ];
-      })
+        (nerdfonts.override {
+          fonts = [
+            "NerdFontsSymbolsOnly"
+            "FiraCode"
+            "JetBrainsMono"
+            "Iosevka"
+          ];
+        })
       */
     ];
   };
