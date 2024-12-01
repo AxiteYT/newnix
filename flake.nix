@@ -41,7 +41,7 @@
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
 
-    # WSL 
+    # WSL
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
   };
 
