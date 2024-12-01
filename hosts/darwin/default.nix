@@ -264,6 +264,8 @@
     packages = with pkgs; [
       material-design-icons
       font-awesome
+      #TODO: Fix below when there is more doco for the breaking change:
+      /*
       (nerdfonts.override {
         fonts = [
           "NerdFontsSymbolsOnly"
@@ -272,6 +274,7 @@
           "Iosevka"
         ];
       })
+      */
     ];
   };
 }

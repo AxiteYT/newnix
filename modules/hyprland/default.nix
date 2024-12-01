@@ -42,6 +42,8 @@
   };
 
   # Fonts
+  #TODO: Fix below when there is more doco for the breaking change:
+  /*
   fonts = {
     packages = with pkgs; [
       font-awesome
@@ -76,4 +78,5 @@
       };
     };
   };
+  */
 }

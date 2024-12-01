@@ -32,6 +32,8 @@
   };
 
   # Fonts
+  #TODO: Fix below when there is more doco for the breaking change:
+/*
   fonts = {
     packages = with pkgs; [
       fira-code
@@ -62,7 +64,7 @@
       };
     };
   };
-
+  */
   # KDE Packages
   environment.systemPackages = with pkgs; [
     kdePackages.knotifications
