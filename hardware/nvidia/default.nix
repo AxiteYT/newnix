@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   nixpkgs.config.nvidia.acceptLicense = true;
 
@@ -22,6 +27,7 @@
       powerManagement.enable = true; # Disable if issues with sleep/suspend
       package = config.boot.kernelPackages.nvidiaPackages.latest;
       nvidiaSettings = true;
+      open = true;
     };
     graphics = {
       enable32Bit = true;
