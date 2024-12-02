@@ -142,6 +142,17 @@
           ];
         };
 
+        dojo = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            disko.nixosModules.disko
+            { disko.devices.disk.main.device = "dev/sdb"; }
+            ./configuration.nix
+            ./disk-config.nix
+            ./hosts/dojo
+          ];
+        };
+
         axtopair = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
