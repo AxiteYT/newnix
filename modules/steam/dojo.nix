@@ -2,14 +2,22 @@
 {
   imports = [ ./default.nix ];
 
-  services.xserver = {
-    enable = true;
-    autoLogin.user = "dojo";
+  # Set to stable kernel
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_11;
 
+  services = {
+    xserver = {
+      enable = true;
+      displayManager = {
+        lightdm.enable = false;
+        gdm.enable = true;
+      };
+    };
     displayManager = {
-      lightdm.enable = false;
-      autoLogin.enable = true;
-      gdm.enable = true;
+      autoLogin = {
+        enable = true;
+        user = "dojo";
+      };
     };
   };
   programs.steam.gamescopeSession.enable = true;
