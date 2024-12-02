@@ -48,8 +48,6 @@ in
       protonup-qt
       putty
       remmina
-      runelite
-      runescape
       ryujinx
       spotify
       unityhub
