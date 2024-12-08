@@ -6,9 +6,8 @@
 }:
 
 {
-  imports =
-    [
-    ];
+  imports = [
+  ];
 
   boot.isContainer = true;
 }
