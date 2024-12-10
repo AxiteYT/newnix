@@ -49,7 +49,10 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
-      permittedInsecurePackages = [ "aspnetcore-runtime-wrapped-6.0.36" ];
+      permittedInsecurePackages = [
+        "aspnetcore-runtime-wrapped-6.0.36"
+        "aspnetcore-runtime-6.0.36"
+      ];
     };
   };
 
