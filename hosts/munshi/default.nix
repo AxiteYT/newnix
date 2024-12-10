@@ -5,6 +5,9 @@
     ./network-config.nix
   ];
 
+  # Set nix gc settings | TODO: Move to build server module once user & ssh is working
+  nix.gc.options = lib.mkForce "";
+
   # Add munshi users
   users.users = {
     munshi = {
