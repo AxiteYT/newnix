@@ -32,39 +32,37 @@
   };
 
   # Fonts
-  #TODO: Fix below when there is more doco for the breaking change:
-  /*
-    fonts = {
-      packages = with pkgs; [
-        fira-code
-        fira-code-symbols
-        font-awesome
-        hunspellDicts.en_AU
-        hunspellDicts.en_US
-        noto-fonts
-        noto-fonts-cjk-sans
-        noto-fonts-emoji
-        source-han-sans
-        source-han-sans-japanese
-        source-han-serif-japanese
-        (nerdfonts.override { fonts = [ "Meslo" ]; })
-      ];
-      fontconfig = {
-        enable = true;
-        defaultFonts = {
-          monospace = [ "Meslo LG M Regular Nerd Font Complete Mono" ];
-          serif = [
-            "Noto Serif"
-            "Source Han Serif"
-          ];
-          sansSerif = [
-            "Noto Sans"
-            "Source Han Sans"
-          ];
-        };
+  fonts = {
+    packages = with pkgs; [
+      fira-code
+      fira-code-symbols
+      font-awesome
+      hunspellDicts.en_AU
+      hunspellDicts.en_US
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+      source-han-sans
+      source-han-sans-japanese
+      source-han-serif-japanese
+      nerd-fonts.meslo-lg
+    ];
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace = [ "Meslo LG M Regular Nerd Font Complete Mono" ];
+        serif = [
+          "Noto Serif"
+          "Source Han Serif"
+        ];
+        sansSerif = [
+          "Noto Sans"
+          "Source Han Sans"
+        ];
       };
     };
-  */
+  };
+
   # KDE Packages
   environment.systemPackages = with pkgs; [
     kdePackages.knotifications
