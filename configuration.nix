@@ -63,7 +63,6 @@
     gc = {
       automatic = true;
       randomizedDelaySec = "14m";
-      options = lib.mkDefault "--delete-old";
     };
   };
 
