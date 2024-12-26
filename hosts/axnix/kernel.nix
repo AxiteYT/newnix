@@ -18,7 +18,10 @@
       ];
       kernelModules = [ ];
     };
-    kernelModules = [ "kvm-intel" "btintel" ];
+    kernelModules = [
+      "kvm-intel"
+      "btintel"
+    ];
     extraModulePackages = [ ];
   };
 
