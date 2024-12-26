@@ -66,6 +66,9 @@
     };
   };
 
+  # Allow all firmware
+  hardware.enableAllFirmware = true;
+
   # Set kernel to use latest Linux kernel
   boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
 
