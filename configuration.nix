@@ -20,12 +20,14 @@
     alacritty
     btop
     curl
+    dmidecode
     gawk
     gitMinimal
     htop
     killall
     neofetch
     ookla-speedtest
+    pciutils
     tmux
     tree
     unzip
