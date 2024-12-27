@@ -6,7 +6,7 @@
     #../../modules/hyprland
     ../../modules/kde
     ../../modules/steam
-    ../../mounts/apollo.nix
+    #../../mounts/apollo.nix
     ../default.nix
     ./kernel.nix
     ./network-config.nix
