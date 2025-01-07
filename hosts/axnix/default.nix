@@ -53,7 +53,7 @@
       support32Bit = true;
     };
   };
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # Enable Bluetooth
   hardware.bluetooth = {
