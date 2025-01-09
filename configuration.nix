@@ -20,6 +20,7 @@
     alacritty
     btop
     curl
+    dig
     dmidecode
     gawk
     gitMinimal
