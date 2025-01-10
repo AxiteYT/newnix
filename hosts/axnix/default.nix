@@ -26,6 +26,7 @@
     networkmanagerapplet
     nixpkgs-fmt
     ntfs3g
+    obsidian
     ollama
     patchelf
     powershell
