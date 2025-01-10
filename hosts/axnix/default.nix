@@ -23,6 +23,7 @@
     lutris
     libreoffice-qt
     neovim
+    networkmanagerapplet
     nixpkgs-fmt
     ntfs3g
     ollama
