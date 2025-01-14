@@ -17,7 +17,6 @@
     cargo
     cifs-utils
     ffmpeg-full
-    gamemode
     input-remapper
     killall
     lutris
