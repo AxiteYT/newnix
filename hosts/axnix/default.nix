@@ -23,6 +23,7 @@
     libreoffice-qt
     neovim
     networkmanagerapplet
+    nexusmods-app-unfree
     nixpkgs-fmt
     ntfs3g
     obsidian
