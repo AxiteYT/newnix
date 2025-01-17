@@ -17,6 +17,7 @@
     cargo
     cifs-utils
     ffmpeg-full
+    handbrake
     input-remapper
     killall
     lutris
