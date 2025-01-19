@@ -30,6 +30,7 @@
     obsidian
     ollama
     patchelf
+    piper
     powershell
     protontricks
     rpcs3
