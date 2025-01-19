@@ -21,7 +21,6 @@
     input-remapper
     killall
     lutris
-    libratbag
     libreoffice-qt
     neovim
     networkmanagerapplet
@@ -70,4 +69,7 @@
       };
     };
   };
+
+  # Enable ratbag daemon
+  services.ratbagd.enable = true;
 }
