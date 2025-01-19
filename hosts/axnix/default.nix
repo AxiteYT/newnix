@@ -21,6 +21,7 @@
     input-remapper
     killall
     lutris
+    libratbag
     libreoffice-qt
     neovim
     networkmanagerapplet
