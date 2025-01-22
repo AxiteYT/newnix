@@ -26,6 +26,7 @@
     networkmanagerapplet
     nexusmods-app-unfree
     nixpkgs-fmt
+    nodejs_23
     ntfs3g
     obsidian
     ollama
