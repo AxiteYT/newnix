@@ -61,14 +61,6 @@
     };
   };
 
-  # Garbage Collection
-  nix = {
-    gc = {
-      automatic = true;
-      randomizedDelaySec = "14m";
-    };
-  };
-
   # Allow all firmware
   hardware.enableAllFirmware = true;
 
