@@ -94,6 +94,11 @@
 
                 systemd.services.sshd.wantedBy = nixpkgs.lib.mkForce [ "multi-user.target" ];
 
+                # Enable serial port
+                boot.kernelParams = [
+                  "console=ttyS0,115200n8"
+                ];
+
                 # Add SSH keys
                 users.users.root.openssh.authorizedKeys.keys = [
                   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMXEwWst3Kkag14hG+nCtiRX8KHcn6w/rUeZC5Ww7RU axite@axitemedia.com"

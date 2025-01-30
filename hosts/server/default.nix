@@ -18,4 +18,9 @@
     defaultGateway = "192.168.1.1";
     nameservers = [ "192.168.1.1" ];
   };
+
+  # Enable serial port
+  boot.kernelParams = [
+    "console=ttyS0,115200n8"
+  ];
 }
