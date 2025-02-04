@@ -20,6 +20,7 @@
     handbrake
     input-remapper
     killall
+    lmstudio
     lutris
     libreoffice-qt
     neovim
