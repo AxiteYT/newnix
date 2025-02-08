@@ -27,9 +27,9 @@ in
     # Packages
     packages = with pkgs; [
       bitwarden
-      blender
+      #TODO: temp due to failures. blender
       brave
-      davinci-resolve
+      #TODO: temp due to failures. davinci-resolve
       discord
       dolphin-emu
       filezilla
