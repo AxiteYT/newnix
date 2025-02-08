@@ -25,9 +25,9 @@
   };
 
   services.udev.extraRules = "ATTR{idVendor}==\"046d\", ATTR{idProduct}==\"c261\", RUN+=\"${pkgs.usb-modeswitch}/bin/usb_modeswitch -c '/etc/usb_modeswitch.d/046d\:c261'\"";
-  environment.systemPackages = [
-    pkgs.unstable.oversteer
-    pkgs.usb-modeswitch
-    pkgs.usb-modeswitch-data
+  environment.systemPackages = with pkgs;[
+    oversteer
+    usb-modeswitch
+    usb-modeswitch-data
   ];
 }
