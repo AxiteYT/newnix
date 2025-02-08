@@ -2,6 +2,7 @@
 {
   imports = [
     ../../hardware/amd
+    ../../hardware/g920
     ../../modules/flatpak
     #../../modules/hyprland
     ../../modules/kde
