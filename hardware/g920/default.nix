@@ -4,7 +4,7 @@
 
   # steering wheel driver
   hardware.new-lg4ff.enable = true;
-  
+
   # Xbox controller driver
   hardware.xpadneo.enable = true;
 
@@ -25,7 +25,7 @@
   };
 
   services.udev.extraRules = "ATTR{idVendor}==\"046d\", ATTR{idProduct}==\"c261\", RUN+=\"${pkgs.usb-modeswitch}/bin/usb_modeswitch -c '/etc/usb_modeswitch.d/046d\:c261'\"";
-  environment.systemPackages = with pkgs;[
+  environment.systemPackages = with pkgs; [
     oversteer
     usb-modeswitch
     usb-modeswitch-data
