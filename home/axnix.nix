@@ -40,7 +40,6 @@ in
       gparted
       hunspell
       k4dirstat
-      kdenlive
       lutris
       nixfmt-rfc-style
       patchelf
