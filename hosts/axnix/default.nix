@@ -38,6 +38,7 @@
     powershell
     protontricks
     rpcs3
+    via
     vim
     vlc
     wayland-utils
