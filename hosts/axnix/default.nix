@@ -3,6 +3,7 @@
   imports = [
     ../../hardware/amd
     ../../hardware/g920
+    ../../hardware/keychron
     #../../modules/flatpak
     #../../modules/hyprland
     ../../modules/kde
@@ -38,7 +39,6 @@
     powershell
     protontricks
     rpcs3
-    via
     vim
     vlc
     wayland-utils
