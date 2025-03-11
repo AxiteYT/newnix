@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   # Source: https://github.com/the-furry-hubofeverything/hubble-systems/blob/main/hosts/pc/common/hardware/logitechWheelSupport.nix
 
@@ -24,7 +24,12 @@
     };
   };
 
-  services.udev.extraRules = "ATTR{idVendor}==\"046d\", ATTR{idProduct}==\"c261\", RUN+=\"${pkgs.usb-modeswitch}/bin/usb_modeswitch -c '/etc/usb_modeswitch.d/046d\:c261'\"";
+  # udev rules
+  services.udev.extraRules = lib.mkAfter ''
+    ATTR{idVendor}=="046d", ATTR{idProduct}=="c261", RUN+="${pkgs.usb-modeswitch}/bin/usb_modeswitch -c '/etc/usb_modeswitch.d/046d:c261'"
+  '';
+
+  # Install neccesary packages
   environment.systemPackages = with pkgs; [
     oversteer
     usb-modeswitch
