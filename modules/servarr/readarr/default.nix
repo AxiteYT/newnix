@@ -1,7 +1,7 @@
 {
   services.readarr = {
     enable = true;
-    group = "readarr";
+    group = "servarr";
     openFirewall = true;
   };
 }
