@@ -3,7 +3,6 @@
     ../qbittorrent
     #./bazarr
     ./flaresolverr
-    ./nzbget
     ./prowlarr
     ./radarr
     ./readarr
