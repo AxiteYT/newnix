@@ -250,6 +250,17 @@
         };
       };
 
+      bedrock = lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          disko.nixosModules.disko
+          sops-nix.nixosModules.sops
+          ./configuration.nix
+          ./disk-config.nix
+          ./hosts/bedrock
+        ];
+      };
+
       darwinConfigurations.axtoppro = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [ ./hosts/axtoppro ];
