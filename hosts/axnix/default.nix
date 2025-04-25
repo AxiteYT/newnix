@@ -38,7 +38,7 @@
     piper
     powershell
     protontricks
-    rpcs3
+    #TODO: Add back when workingrpcs3
     vim
     vlc
     wayland-utils
