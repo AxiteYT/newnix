@@ -1,3 +1,4 @@
+# flake.nix
 {
   ##########
   # Inputs #
@@ -43,6 +44,9 @@
 
     # WSL
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
+    # treefmt
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   ###########
@@ -60,18 +64,37 @@
       sops-nix,
       nixos-wsl,
       darwin,
+      nixpkgs-darwin,
       ...
     }:
     let
       lib = nixpkgs.lib;
       dlib = darwin.lib;
       user = "axite";
+
+      # shared formatter config
+      cfg = {
+        projectRootFile = "flake.nix";
+        programs = {
+          nixfmt-rfc-style.enable = true;
+          prettier.enable = true;
+          shfmt.enable = true;
+        };
+      };
+
+      treefmtX86 = inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.x86_64-linux cfg;
+
+      treefmtDarwin = inputs.treefmt-nix.lib.evalModule nixpkgs-darwin.legacyPackages.aarch64-darwin cfg;
     in
     {
       formatter = {
-        aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
-        x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+        x86_64-linux = treefmtX86.config.build.wrapper;
+        aarch64-darwin = treefmtDarwin.config.build.wrapper;
       };
+
+      ################
+      # NixOS Systems#
+      ################
 
       nixosConfigurations = {
         #######################
@@ -81,8 +104,7 @@
           Build with the following command:
           nix build .#nixosConfigurations.ISO.config.system.build.isoImage
         */
-
-        ISO = nixpkgs.lib.nixosSystem {
+        ISO = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             # Installation CD
@@ -261,9 +283,14 @@
         ];
       };
 
-      darwinConfigurations.axtoppro = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [ ./hosts/axtoppro ];
+      ########################
+      # Darwin configurations#
+      ########################
+      darwinConfigurations = {
+        axtoppro = dlib.darwinSystem {
+          system = "aarch64-darwin";
+          modules = [ ./hosts/axtoppro ];
+        };
       };
     };
 }
