@@ -1,4 +1,5 @@
 {
+  /*
   nixpkgs.overlays = [
     (self: super: {
       flaresolverr =
@@ -21,6 +22,7 @@
         pkgs.flaresolverr;
     })
   ];
+  */
 
   services.flaresolverr = {
     enable = true;
