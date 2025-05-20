@@ -41,7 +41,7 @@ in
       hunspell
       k4dirstat
       lutris
-      nixfmt-rfc-style
+      nixfmt
       patchelf
       prismlauncher # (Minecraft)
       protonup-qt

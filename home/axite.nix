@@ -16,7 +16,7 @@
       git
       gparted
       hunspell
-      nixfmt-rfc-style
+      nixfmt
       putty
     ];
 
