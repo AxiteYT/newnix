@@ -117,9 +117,7 @@
                 systemd.services.sshd.wantedBy = nixpkgs.lib.mkForce [ "multi-user.target" ];
 
                 # Enable serial port
-                boot.kernelParams = [
-                  "console=ttyS0,115200n8"
-                ];
+                boot.kernelParams = [ "console=ttyS0,115200n8" ];
 
                 # Add SSH keys
                 users.users.root.openssh.authorizedKeys.keys = [
@@ -140,24 +138,28 @@
 
         axnix = lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = {
-            inherit inputs self user;
-          };
+          specialArgs = { inherit inputs self user; };
           modules = [
+
+            # Aitum Multistream overlay
+            {
+              nixpkgs.overlays = [ (import ./overlays/obs-aitum-multistream.nix) ];
+            }
+
             # home-manager
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.axite = import ./home/axnix.nix;
-              home-manager.extraSpecialArgs = {
-                inherit inputs self user;
-              };
+              home-manager.extraSpecialArgs = { inherit inputs self user; };
             }
 
             # disko
             disko.nixosModules.disko
-            { disko.devices.disk.main.device = "/dev/nvme0n1"; }
+            {
+              disko.devices.disk.main.device = "/dev/nvme0n1";
+            }
 
             # SOPS
             sops-nix.nixosModules.sops
