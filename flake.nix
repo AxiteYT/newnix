@@ -53,24 +53,14 @@
   # Outputs #
   ###########
 
-  outputs =
-    inputs@{
-      disko,
-      home-manager,
-      nixos-hardware,
-      nixpkgs,
-      nur,
-      self,
-      sops-nix,
-      nixos-wsl,
-      darwin,
-      nixpkgs-darwin,
-      ...
-    }:
+  outputs = inputs@{ disko, home-manager, nixos-hardware, nixpkgs, nur, self
+    , sops-nix, nixos-wsl, darwin, nixpkgs-darwin, ... }:
     let
       lib = nixpkgs.lib;
       dlib = darwin.lib;
       user = "axite";
+
+      overlays = [ (import ./overlays/obs-aitum-multistream.nix) ];
 
       # shared formatter config
       cfg = {
@@ -82,11 +72,13 @@
         };
       };
 
-      treefmtX86 = inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.x86_64-linux cfg;
+      treefmtX86 =
+        inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.x86_64-linux
+        cfg;
 
-      treefmtDarwin = inputs.treefmt-nix.lib.evalModule nixpkgs-darwin.legacyPackages.aarch64-darwin cfg;
-    in
-    {
+      treefmtDarwin = inputs.treefmt-nix.lib.evalModule
+        nixpkgs-darwin.legacyPackages.aarch64-darwin cfg;
+    in {
       formatter = {
         x86_64-linux = treefmtX86.config.build.wrapper;
         aarch64-darwin = treefmtDarwin.config.build.wrapper;
@@ -100,32 +92,29 @@
         #######################
         # Installation ISO(s) #
         #######################
-        /*
-          Build with the following command:
-          nix build .#nixosConfigurations.ISO.config.system.build.isoImage
+        /* Build with the following command:
+           nix build .#nixosConfigurations.ISO.config.system.build.isoImage
         */
         ISO = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             # Installation CD
             "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-            (
-              { pkgs, ... }:
-              {
-                imports = [ ./hardware/qemu-guest ];
+            ({ pkgs, ... }: {
+              imports = [ ./hardware/qemu-guest ];
 
-                systemd.services.sshd.wantedBy = nixpkgs.lib.mkForce [ "multi-user.target" ];
+              systemd.services.sshd.wantedBy =
+                nixpkgs.lib.mkForce [ "multi-user.target" ];
 
-                # Enable serial port
-                boot.kernelParams = [ "console=ttyS0,115200n8" ];
+              # Enable serial port
+              boot.kernelParams = [ "console=ttyS0,115200n8" ];
 
-                # Add SSH keys
-                users.users.root.openssh.authorizedKeys.keys = [
-                  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMXEwWst3Kkag14hG+nCtiRX8KHcn6w/rUeZC5Ww7RU axite@axitemedia.com"
-                ];
-                environment.systemPackages = [ ];
-              }
-            )
+              # Add SSH keys
+              users.users.root.openssh.authorizedKeys.keys = [
+                "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMXEwWst3Kkag14hG+nCtiRX8KHcn6w/rUeZC5Ww7RU axite@axitemedia.com"
+              ];
+              environment.systemPackages = [ ];
+            })
           ];
         };
 
@@ -140,12 +129,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs self user; };
           modules = [
-
-            # Aitum Multistream overlay
-            {
-              nixpkgs.overlays = [ (import ./overlays/obs-aitum-multistream.nix) ];
-            }
-
+            { nixpkgs.overlays = overlays; }
             # home-manager
             home-manager.nixosModules.home-manager
             {

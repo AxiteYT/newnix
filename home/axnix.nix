@@ -1,8 +1,6 @@
 { pkgs, lib, ... }:
-let
-  username = "axite";
-in
-{
+let username = "axite";
+in {
   # Allow unfree packages
   nixpkgs = {
     config = {
@@ -71,13 +69,13 @@ in
     obs-studio = {
       enable = true;
       package = pkgs.obs-studio;
-      plugins = map (plugin: pkgs.obs-studio-plugins.${plugin}) [
-        "obs-aitum-multistream"
-        "obs-backgroundremoval"
-        "obs-gstreamer"
-        "obs-vaapi"
-        "obs-vkcapture"
-        "wlrobs"
+      plugins = with pkgs.obs-studio-plugins; [
+        obs-aitum-multistream
+        obs-backgroundremoval
+        obs-gstreamer
+        obs-vaapi
+        obs-vkcapture
+        wlrobs
       ];
     };
 
@@ -93,18 +91,14 @@ in
             family = "Fira Code";
             style = "Bold";
           };
-          italic = {
-            family = "Fira Code";
-          };
+          italic = { family = "Fira Code"; };
         };
         window = {
           opacity = 0.2;
           blur = true;
           dynamic_padding = true;
         };
-        terminal.shell = {
-          program = "${pkgs.zsh}/bin/zsh";
-        };
+        terminal.shell = { program = "${pkgs.zsh}/bin/zsh"; };
       };
     };
 
