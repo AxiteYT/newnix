@@ -43,7 +43,7 @@
     vlc
     wayland-utils
     winetricks
-    wineWowPackages.waylandFull
+    wineWowPackages.stable
     xdotool
     xorg.xprop
     xorg.xrandr
