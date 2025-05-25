@@ -44,6 +44,7 @@
     wayland-utils
     winetricks
     wineWowPackages.stable
+    wineWowPackages.waylandFull
     xdotool
     xorg.xprop
     xorg.xrandr
