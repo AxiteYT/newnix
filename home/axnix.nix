@@ -1,6 +1,8 @@
 { pkgs, lib, ... }:
-let username = "axite";
-in {
+let
+  username = "axite";
+in
+{
   # Allow unfree packages
   nixpkgs = {
     config = {
@@ -91,14 +93,18 @@ in {
             family = "Fira Code";
             style = "Bold";
           };
-          italic = { family = "Fira Code"; };
+          italic = {
+            family = "Fira Code";
+          };
         };
         window = {
           opacity = 0.2;
           blur = true;
           dynamic_padding = true;
         };
-        terminal.shell = { program = "${pkgs.zsh}/bin/zsh"; };
+        terminal.shell = {
+          program = "${pkgs.zsh}/bin/zsh";
+        };
       };
     };
 
