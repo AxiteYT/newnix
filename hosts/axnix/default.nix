@@ -4,7 +4,7 @@
     ../../hardware/amd
     ../../hardware/g920
     ../../hardware/keychron
-    #../../modules/flatpak
+    ../../modules/flatpak
     #../../modules/hyprland
     ../../modules/kde
     ../../modules/steam
@@ -17,6 +17,7 @@
   # System Packages
   environment.systemPackages = with pkgs; [
     bolt-launcher
+    bottles
     cargo
     cifs-utils
     ffmpeg-full
