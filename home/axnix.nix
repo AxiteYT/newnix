@@ -76,6 +76,7 @@ in
         obs-backgroundremoval
         obs-gstreamer
         obs-vaapi
+        obs-vertical-canvas
         obs-vkcapture
         wlrobs
       ];
