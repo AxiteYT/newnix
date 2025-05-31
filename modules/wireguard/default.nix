@@ -14,8 +14,8 @@
       privateKeyFile = "/root/.wg/besta-AU-1.key";
       peers = [
         {
-          publicKey = "xRu4XSIeCCNh4wQqit2w0PwAqzAs7JVA4zQqxGOhSSY=";
-          endpoint = "79.127.185.222:51820";
+          publicKey = "dpcwy7V6UxFxZ5BEYED5w30sqpz2Bak+7HchFbUNHUw=";
+          endpoint = "180.149.228.66:51820";
           allowedIPs = [ "0.0.0.0/0" ];
           persistentKeepalive = 25;
         }
