@@ -20,7 +20,7 @@
   };
 
   # Enable serial port
-  boot.kernelParams = lib.mkDefault [
+  boot.kernelParams = [
     "console=ttyS0,115200n8"
   ];
 }
