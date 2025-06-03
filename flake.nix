@@ -7,6 +7,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    masternixpkgs.url = "nixpkgs/master";
 
     # flake-utils
     flake-utils.url = "github:numtide/flake-utils";
@@ -71,8 +72,6 @@
       lib = nixpkgs.lib;
       dlib = darwin.lib;
       user = "axite";
-
-      overlays = [ (import ./overlays/obs-aitum-multistream.nix) ];
 
       # shared formatter config
       cfg = {
@@ -142,7 +141,6 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs self user; };
           modules = [
-            { nixpkgs.overlays = overlays; }
             # home-manager
             home-manager.nixosModules.home-manager
             {
