@@ -58,6 +58,7 @@
     inputs@{
       disko,
       home-manager,
+      masternixpkgs,
       nixos-hardware,
       nixpkgs,
       nur,
