@@ -76,7 +76,7 @@ in
     obs-studio = {
       enable = true;
       package = pkgs.obs-studio;
-      plugins = with inputs.masternixpkgs.obs-studio-plugins; [
+      plugins = with inputs.masternixpkgs.legacyPackages.x86_64-linux.obs-studio-plugins; [
         obs-aitum-multistream
         obs-backgroundremoval
         obs-gstreamer
