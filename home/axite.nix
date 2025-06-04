@@ -1,7 +1,7 @@
-{ ... }:
+{ self, ... }:
 {
   imports = [
-    ./alacritty
+    "${self}/home/alacritty/default.nix"
   ];
 
   home = {
