@@ -17,16 +17,12 @@
     ./network-config.nix
     # Home Manager
     inputs.home-manager.nixosModules.home-manager
-    (
-      { ... }:
-      {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users.axite = import ../../home/axite.nix;
-        home-manager.extraSpecialArgs = { inherit inputs self; };
-      }
-    )
   ];
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.axite = import ../../home/axite.nix;
+  home-manager.extraSpecialArgs = { inherit inputs self; };
 
   # System Packages
   environment.systemPackages = with pkgs; [
