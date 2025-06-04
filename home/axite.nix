@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, lib, ... }:
 {
   imports = [
     ./alacritty
@@ -7,7 +7,7 @@
 
   home = {
     username = "axite";
-    homeDirectory = "/home/axite";
+    homeDirectory = lib.mkForce "/home/axite";
     stateVersion = "24.05";
   };
 
