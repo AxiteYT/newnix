@@ -76,8 +76,8 @@ in
     obs-studio = {
       enable = true;
       package = pkgs.obs-studio;
-      plugins = with inputs.masternixpkgs.legacyPackages.x86_64-linux.obs-studio-plugins; [
-        obs-aitum-multistream
+      plugins = with pkgs.obs-studio-plugins; [
+        #TODO: Add package when merged to unstable: obs-aitum-multistream
         obs-backgroundremoval
         obs-gstreamer
         obs-vaapi
