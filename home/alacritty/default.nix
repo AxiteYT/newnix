@@ -1,12 +1,11 @@
 { pkgs, lib, ... }:
 {
-  # Editor
-  sessionVariables = {
+  home.sessionVariables = {
     EDITOR = "nano";
     TERMINAL = "alacritty";
   };
 
-  alacritty = {
+  programs.alacritty = {
     enable = true;
     settings = {
       font = {
@@ -33,7 +32,7 @@
     };
   };
 
-  zsh = {
+  programs.zsh = {
     enable = true;
     initExtraFirst = ''
       [ ! -d "$HOME/.zsh/fsh/" ] && mkdir $HOME/.zsh/fsh/

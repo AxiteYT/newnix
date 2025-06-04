@@ -7,6 +7,7 @@
   home = {
     username = "axite";
     homeDirectory = "/home/axite";
+    stateVersion = "24.05";
   };
 
   programs = {
