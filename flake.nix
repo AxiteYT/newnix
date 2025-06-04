@@ -146,6 +146,18 @@
               disko.devices.disk.main.device = "/dev/nvme0n1";
             }
 
+            # Home-manager
+            inputs.home-manager.nixosModules.home-manager
+            (
+              { ... }:
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.axite = import ./home/axite.nix;
+                home-manager.extraSpecialArgs = { inherit inputs self; };
+              }
+            )
+
             # SOPS
             sops-nix.nixosModules.sops
 
