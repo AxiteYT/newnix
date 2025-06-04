@@ -140,13 +140,6 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs self user; };
           modules = [
-            # home-manager
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.users.axite = import ./home/axite.nix;
-              home-manager.extraSpecialArgs = { inherit inputs self user; };
-            }
-
             # disko
             disko.nixosModules.disko
             {

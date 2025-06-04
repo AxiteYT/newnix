@@ -1,17 +1,27 @@
 {
-  config,
   pkgs,
   lib,
   self,
+  inputs,
   ...
 }:
 {
-  imports = (config.imports or [ ]) ++ [
+  imports = [
     "${self}/hardware/amd"
-    # ...
-    ../default.nix
+    "${self}/hardware/keychron"
+    "${self}/modules/flatpak"
+    "${self}/modules/hyprland"
+    "${self}/modules/steam"
     ./kernel.nix
     ./network-config.nix
+    # Home Manager
+    inputs.home-manager.nixosModules.home-manager
+    ({ ... }: {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.users.axite = import "${self}/home/axite.nix";
+      home-manager.extraSpecialArgs = { inherit inputs self; };
+    })
   ];
 
   # System Packages
