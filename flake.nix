@@ -145,7 +145,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.axite = import ./home/axnix.nix;
+              home-manager.users.axite = import ./home/axite.nix;
               home-manager.extraSpecialArgs = { inherit inputs self user; };
             }
 

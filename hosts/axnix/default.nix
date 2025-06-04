@@ -21,6 +21,35 @@
 
   # System Packages
   environment.systemPackages = with pkgs; [
+    bitwarden
+    blender
+    brave
+    davinci-resolve
+    discord
+    dolphin-emu
+    filezilla
+    gh
+    gimp
+    git
+    github-desktop
+    gparted
+    hunspell
+    k4dirstat
+    lutris
+    nixfmt
+    patchelf
+    prismlauncher # (Minecraft)
+    protonup-qt
+    putty
+    remmina
+    ryujinx
+    spotify
+    unityhub
+    virt-viewer
+    vlc
+    vscodium
+    wgnord
+    zed-editor
     bolt-launcher
     bottles
     cargo
