@@ -2,6 +2,7 @@
 {
   imports = [
     ./alacritty
+    ./themes
   ];
 
   home = {
