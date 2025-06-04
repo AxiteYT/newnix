@@ -1,19 +1,14 @@
+{ ... }:
 {
+  config,
   pkgs,
   lib,
-  self,
   ...
 }:
 {
-  imports = [
+  imports = (config.imports or [ ]) ++ [
     "${self}/hardware/amd"
-    #TODO: Enable when issue https://github.com/NixOS/nixpkgs/issues/413170 is resolved "${self}/hardware/g920"
-    "${self}/hardware/keychron"
-    "${self}/modules/flatpak"
-    "${self}/modules/hyprland"
-    #"${self}/modules/kde"
-    "${self}/modules/steam"
-    #"${self}/mounts/apollo.nix"
+    # ...
     ../default.nix
     ./kernel.nix
     ./network-config.nix
